@@ -17,6 +17,7 @@ class User(db.Model):
     is_active = db.Column(db.Boolean, default=1)
 
     type_id = db.Column(db.Integer, db.ForeignKey('type_account.id'))
+    students = db.relationship('StudentCourse', backref='user', lazy='dynamic')
 
     def __init__(self, username, password, fullname, email):
         self.username = username
