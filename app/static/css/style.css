@@ -24,6 +24,7 @@ a:hover{
     z-index: 100;
     /* overflow: hidden; */
     /* background: pink; */
+    border-bottom: 1px solid rgba(0,0,0,.1);
 }
 .header{
     margin-bottom: 50px;
@@ -43,8 +44,18 @@ a:hover{
     margin-top: 10px;
     color: white;
     background: #2a73cc;
-    font-size: 20px;
+    font-size: 16px;
 }
+.account-header{
+    float: right;
+}
+.account-header button{
+    margin-top: 10px;
+    color: #2a73cc;
+    border: 1px solid #2A73CC ;
+    font-size: 16px;
+}
+
 .dropdown-item{
     padding: 10px;
 }
@@ -96,10 +107,15 @@ a:hover{
     /* overflow: hidden; */
    
 }
-.carousel-item img{
-    height: 500px;
-    width: 100%;
-    margin: auto;
+.carousel-indicators li {
+    border-radius: 10px;
+}
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #3276b1;
+    border-color: #3276b1;
 }
 .carousel-caption{
     color: black
@@ -109,6 +125,17 @@ a:hover{
     font-family: cursive;
     color: #2a73cc
 }
+/* coursera */
+
+.carousel-item img{
+    max-height: 500px;
+    width: 100%;
+    margin: auto;
+}
+.carousel-control-prev i,.carousel-control-next i{
+    color: #2A73CC;
+}
+/*.......................*/
 .partner-body{
     margin: auto;
 }
@@ -127,13 +154,9 @@ a:hover{
     border: none;
     padding: 5px;
 }
-.list-partner img:hover{
-    transition: 0.3s ease-out;
-    transform: scale(1.02, 1.02);
-}
 .infomation-body{
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .infomation-body-title{
     margin: 35px 0;
@@ -166,11 +189,6 @@ a:hover{
     font-size: .875rem;
     line-height: 1.5rem;
 }
-.right-info img:hover{
-    box-shadow: 0px 20px 50px 0px rgba(141, 167, 244, 0.5);
-    transition: 0.3s ease-out;
-    transform: scale(1.02, 1.02);
-}
 .list-body-cousera{
     margin-bottom: 40px;
 }
@@ -196,6 +214,9 @@ a:hover{
     transition: 0.3s ease-out;
     transform: scale(1.02, 1.02);
 }
+.carousel-control-next, .carousel-control-prev{
+    width: 0;
+}
 .img-item{
     margin: auto;
     width: 100%;
@@ -213,7 +234,7 @@ a:hover{
 }
 
 .btn-more{
-    float: right;
+    float: right;   
     margin: auto;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -287,32 +308,107 @@ a:hover{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#myCarousel .thumbnail {
+	margin-bottom: 0;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image:none !important;
+}
+.carousel-control {
+	color:#fff;
+	top:40%;
+	color:#428BCA;
+	bottom:auto;
+	padding-top:4px;
+	width:30px;
+	height:30px;
+	text-shadow:none;
+	opacity:1;
+}
+.carousel-control:hover {
+	color: #d9534f;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image:none !important;
+}
+.carousel-control.right {
+	left:auto;
+	right:-32px;
+}
+.carousel-control.left {
+	right:auto;
+	left:-32px;
+}
+.carousel-indicators {
+	bottom:-30px;
+}
+.carousel-indicators li {
+	border-radius:0;
+	width:10px;
+	height:10px;
+	background:#ccc;
+	border:1px solid #ccc;
+}
+.carousel-indicators .active {
+	width:12px;
+	height:12px;
+	background:#3276b1;
+	border-color:#3276b1;
+}
+.well {
+    margin: auto;
+}
+/* cousera page */
+.list-topic{
+    margin-bottom: 20px;
+}
+.topic-item{
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: 0px 0px 5px 0px rgba(165, 165, 165, 0.75);
+}
+.topic-item:hover{
+    box-shadow: 0px 20px 50px 0px rgba(141, 167, 244, 0.5);
+    transition: 0.3s ease-out;
+    transform: scale(1.02, 1.02);
+}
+.topic-caption{
+    position: absolute;
+    right: 15%; 
+    bottom: 20px; 
+    left: 15%; 
+     z-index: 10; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center; 
+    
+}
+.img-topic{
+    width: 100%;
+    height: 200px;
+}
+#topic{
+    display: none;
+}
+.see-more{
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+.see-more h5{
+    border: 1px solid #2A73CC;
+    padding: 5px ;
+    border-radius: 4px;
+}
 
 
 
 #footer{
-   
     min-height: 100px;
     /* overflow: hidden; */
-    background: #e8e1e1
+    background: #e8e1e1;
 }
 .footer-left{
     float: left;
