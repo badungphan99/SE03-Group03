@@ -1,4 +1,4 @@
-from server.app import db
+from app import db
 from sqlalchemy.sql import func
 
 class Forum(db.Model):

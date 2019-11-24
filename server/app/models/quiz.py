@@ -1,4 +1,4 @@
-from server.app import db
+from app import db
 
 class Quiz(db.Model):
     __tablename__ = 'quiz'
