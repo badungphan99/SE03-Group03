@@ -11,11 +11,10 @@ class Config:
 
 
 class DevelopmentConfig(Config):
-    load_dotenv(dotenv_path='./env/db_host.env')
+
+    load_dotenv(dotenv_path='./env/db_setting.env.env')
     MYSQL_HOST = os.getenv('MYSQL_HOST')
     MYSQL_PORT = os.getenv('MYSQL_PORT')
-
-    load_dotenv(dotenv_path='./env/db_credential.env')
     MYSQL_DATABASE = os.getenv('MYSQL_DATABASE')
     MYSQL_USER = os.getenv('MYSQL_USER')
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')

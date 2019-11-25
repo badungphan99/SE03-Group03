@@ -6,7 +6,6 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     env_file:
-      - server/env/db_credential.env
       - server/env/db_setting.env
     ports:
       - '3306:3306'
