@@ -12,7 +12,7 @@ class Config:
 
 class DevelopmentConfig(Config):
 
-    load_dotenv(dotenv_path='./env/db_setting.env.env')
+    load_dotenv(dotenv_path='./env/db_setting.env')
     MYSQL_HOST = os.getenv('MYSQL_HOST')
     MYSQL_PORT = os.getenv('MYSQL_PORT')
     MYSQL_DATABASE = os.getenv('MYSQL_DATABASE')
@@ -21,9 +21,9 @@ class DevelopmentConfig(Config):
 
     DEBUG = True
     if(DEBUG):
-        MYSQL_USER = 'root'
+        # MYSQL_USER = 'root'
         MYSQL_HOST = 'localhost'
-        MYSQL_PASSWORD = 'root'
+        # MYSQL_PASSWORD = 'root'
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + str(MYSQL_USER) + ':' + str(MYSQL_PASSWORD) + '@' + str(MYSQL_HOST) + ':' + str(MYSQL_PORT) + '/' + str(MYSQL_DATABASE)
 
     print(SQLALCHEMY_DATABASE_URI)
