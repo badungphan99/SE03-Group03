@@ -13,6 +13,7 @@ Tạo ra một nền tảng cho phép người dùng có thể tạo lớp học
 - SQLAlchemy
 - PHP
 - Yii
+- Docker
 
 ## Chức năng chính
 
@@ -35,6 +36,12 @@ Tạo ra một nền tảng cho phép người dùng có thể tạo lớp học
 - Mọi người đã đăng kí tài khoản đều có thể tạo bài viết riêng để chia sẻ kiến thức.
 - Bài viết sau khi được Admin kiểm duyệt và đạt yêu cầu sẽ được đăng vào mục blog để tất cả mọi người có thể xem được
 
+## Cài đặt
+
+- docker https://docs.docker.com/install/
+- docker-compose https://docs.docker.com/compose/install/
+- `$ docker-compose up -d`
+- docker cho môi trường python chưa có
 
 ## Thành viên nhóm
 
