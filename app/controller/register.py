@@ -30,7 +30,7 @@ def check_input_register(username, password, retypepassword, fullname, email):
     if fullname == None:
         return "Nhap ten"
     for c in fullname:
-        if (ord(c) >= 97 and ord(c) <= 119) or (ord(c) >= 48 and ord(c) <= 57) or (ord(c) >= 65 and ord(c) <= 87):
+        if (ord(c) >= 97 and ord(c) <= 119) or (ord(c) >= 48 and ord(c) <= 57) or (ord(c) >= 65 and ord(c) <= 87) or (c == ' '):
             continue
         return "Ten khong duoc co ky tu dac biet"
 
