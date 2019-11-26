@@ -3,3 +3,4 @@ from app.routes.login import *
 from app.routes.register import *
 from app.routes.course import *
 from app.routes.test import *
+from app.routes.upload import *
