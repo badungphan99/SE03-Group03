@@ -1,7 +1,7 @@
 import os
 from flask import render_template, request
-from app import create_app
-app = create_app(os.getenv('FLASK_CONFIG'))
+from app import app
+# app = create_app(os.getenv('FLASK_CONFIG'))
 
 @app.route('/')
 def main():
@@ -22,7 +22,7 @@ def register():
 
 
 
-    return False
+    return 'notvalid'
 
 if __name__ == '__main__':
     app.run()

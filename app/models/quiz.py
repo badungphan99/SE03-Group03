@@ -1,5 +1,6 @@
 from app import db
 
+__all__ = ["Quiz", "StudentQuiz"]
 class Quiz(db.Model):
     __tablename__ = 'quiz'
     id = db.Column(db.Integer, primary_key=True)

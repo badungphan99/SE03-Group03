@@ -1,7 +1,7 @@
 from app import db
 from sqlalchemy.sql import func
 
-
+__all__ = ["Course" , "Topic", "TeacherCourse", "Section" , "StudentCourse"]
 class Course(db.Model):
     __tablename__ = 'course'
     id = db.Column(db.Integer, primary_key=True)

@@ -1,21 +1,18 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from config import config as Config
+from config import config
 
 db = SQLAlchemy()
 
-def create_app(config):
-    app = Flask(__name__)
-    config_name = config
+app = Flask(__name__)
+config_name = config
 
-    if not isinstance(config, str):
-        config_name = os.getenv('FLASK_CONFIG', 'default')
+if not isinstance(config, str):
+    config_name = os.getenv('FLASK_CONFIG', 'default')
 
-    app.config.from_object(Config[config_name])
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    Config[config_name].init_app(app)
+app.config.from_object(config[config_name])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+config[config_name].init_app(app)
 
-    db.init_app(app)
-
-    return app
+db.init_app(app)
