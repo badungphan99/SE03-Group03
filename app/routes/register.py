@@ -11,13 +11,13 @@ def register():
     _username = request.form.get('username')
     _passwd = request.form.get('password')
     _retype_passwd = request.form.get('retypepassword')
-    _full_name = "dungpb"
+    _full_name = request.form.get('fullname')
     _email = request.form.get('email')
     _birthday = request.form.get('birthday')
     _type_account = 'student'
-    _highest_degree = ''
-    _university = ''
-    _major = ''
+    _highest_degree = request.form.get('highest_degree')
+    _university = request.form.get('university')
+    _major = request.form.get('major')
 
     status = check_input_register(_username, _passwd, _retype_passwd, _full_name, _email)
 
