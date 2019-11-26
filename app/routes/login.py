@@ -13,7 +13,7 @@ def process_login():
     
     status = check_login(_username, _passwd)
     if status == True:
-        return redirect('block_coursera.html')
+        return redirect('block_course.html')
         session['username'] = _username
     flash(status)
     return redirect('/login.html')

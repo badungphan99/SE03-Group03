@@ -17,9 +17,9 @@ def login():
 
     # Validate and send response
     if _username and _password:
-        user1 = db.session.query(User).filter(and_(User.username.like(_username), User.password.like(_password))).first();
+        user1 = db.session.query(User).filter(and_(User.username.like(_username), User.password.like(_password))).first()
         if user1:
-            return render_template('block_coursera.html')
+            return render_template('block_course.html')
         else:
             return "Not find", 400
     else:
