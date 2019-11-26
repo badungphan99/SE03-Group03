@@ -1,4 +1,4 @@
-from app import app
+from app import *
 from flask import render_template
 
 @app.route('/block_coursera.html', endpoint='render_course')
