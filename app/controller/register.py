@@ -1,12 +1,12 @@
-from app.models import *
-from app import db
+# from app.models import *
+# from app import db
 
-def check_user_name(username):
-    user = db.session.query(User).filter(User.username.like(username)).first()
-    if(user):
-        return 1
-    else:
-        return 0
+# def check_user_name(username):
+#     user = db.session.query(User).filter(User.username.like(username)).first()
+#     if(user):
+#         return 1
+#     else:
+#         return 0
 
 def check_input_register(username, password, retypepassword, fullname, email):
     
@@ -14,8 +14,10 @@ def check_input_register(username, password, retypepassword, fullname, email):
     if username == None:
         return "Nhap username"
     for c in username:
-        if ord(c) < 97 or ord(c) > 119:
-            return "username khong duoc co ky tu dac biet"
+        if (ord(c) >= 97 and ord(c) <= 119) or (ord(c) >= 48 and ord(c) <= 57) or (ord(c) >= 65 and ord(c) <= 87):
+            continue
+        return "username khong duoc co ky tu dac biet"
+        
 
     #check pass
     if len(password) < 8 or password == None:
@@ -27,8 +29,9 @@ def check_input_register(username, password, retypepassword, fullname, email):
     if fullname == None:
         return "Nhap ten"
     for c in fullname:
-        if ord(c) < 97 or ord(c) > 119:
-            return "Ten khong duoc co ky tu dac biet"
+        if (ord(c) >= 97 and ord(c) <= 119) or (ord(c) >= 48 and ord(c) <= 57) or (ord(c) >= 65 and ord(c) <= 87):
+            continue
+        return "Ten khong duoc co ky tu dac biet"
 
     #check email
     cntA = 0
@@ -43,12 +46,12 @@ def check_input_register(username, password, retypepassword, fullname, email):
     
     return True
 
-def insert_new_user(type_user, username, passwd, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
-    type_account = TypeAccount(type_user)
-    user = User(username, passwd, fullname, email)
-    # type_account.users.append(user)
-    db.session.add(user)
-    db.session.commit()
+# def insert_new_user(type_user, username, passwd, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
+#     type_account = TypeAccount(type_user)
+#     user = User(username, passwd, fullname, email)
+#     # type_account.users.append(user)
+#     db.session.add(user)
+#     db.session.commit()
 
 if __name__ == "__main__":
-    print(check_input_register("asfkjasfw", "asfasfasf", "asfasfasf", "wiofoasdaswfowfw", "ashaksfha@k.jsfhwf"))
+    print(check_input_register("9asfkjasfwW", "asfasfasf", "asfasfasf", "wiofoasdaswfowfw", "ashaksfha@k.jsfhwf"))
