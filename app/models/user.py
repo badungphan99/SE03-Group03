@@ -20,11 +20,15 @@ class User(db.Model):
     type_id = db.Column(db.Integer, db.ForeignKey('type_account.id'))
     students = db.relationship('StudentCourse', backref='user', lazy='dynamic')
 
-    def __init__(self, username, password, fullname, email):
+    def __init__(self, username, password, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
         self.username = username
         self.password = password
         self.fullname = fullname
         self.email = email
+        self.date_of_birth = birthday
+        self.highest_degree = highest_degree
+        self.university = university
+        self.major = major
 
 class TypeAccount(db.Model):
     __tablename__ = 'type_account'
