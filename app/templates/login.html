@@ -46,7 +46,13 @@
                         <!-- show mess khi login that bai -->
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
-
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <p style="color:#e71515;"> {{ message }} </p>
+                                        {% endfor %}
+                                    {% endif %}
+                            {% endwith %}
                             </div>
                         </div>
                         <div class="form-group">
