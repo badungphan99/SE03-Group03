@@ -21,7 +21,9 @@ def check_input_register(username, password, retypepassword, fullname, email):
         
 
     # check pass
-    if len(password) < 8 or password == None or password == '':
+    if password == None or password == '':
+        return "Nhap mat khau"
+    if len(password) < 8 :
         return "Mat khau phai tren 8 ky tu"
     if password != retypepassword:
         return "Mat khau khac nhau, nhap lai"
