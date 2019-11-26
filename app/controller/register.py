@@ -1,5 +1,5 @@
-# from app.models import *
-# from app import db
+from app.models import *
+from app import db
 
 
 def check_user_name(username):
