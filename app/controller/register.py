@@ -12,7 +12,7 @@ def check_user_name(username):
 
 def check_input_register(username, password, retypepassword, fullname, email):
     # check username
-    if username == None:
+    if username == None or username == '':
         return "Nhap username"
     for c in username:
         if (ord(c) >= 97 and ord(c) <= 119) or (ord(c) >= 48 and ord(c) <= 57) or (ord(c) >= 65 and ord(c) <= 87):
@@ -21,13 +21,13 @@ def check_input_register(username, password, retypepassword, fullname, email):
         
 
     # check pass
-    if len(password) < 8 or password == None:
+    if len(password) < 8 or password == None or password == '':
         return "Mat khau phai tren 8 ky tu"
     if password != retypepassword:
         return "Mat khau khac nhau, nhap lai"
 
     # check full name
-    if fullname == None:
+    if fullname == None or fullname == '':
         return "Nhap ten"
     for c in fullname:
         if (ord(c) >= 97 and ord(c) <= 119) or (ord(c) >= 48 and ord(c) <= 57) or (ord(c) >= 65 and ord(c) <= 87) or (c == ' '):
