@@ -1,4 +1,4 @@
-from app import app
+from app import *
 from app.controller import *
 from flask import render_template, request, flash, redirect, url_for
 
@@ -14,5 +14,6 @@ def process_login():
     status = check_login(_username, _passwd)
     if status == True:
         return redirect('block_coursera.html')
+        session['username'] = _username
     flash(status)
     return redirect('/login.html')

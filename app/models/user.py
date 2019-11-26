@@ -1,8 +1,8 @@
-from app import db
+from app import db, UserMixin
 from sqlalchemy.sql import func
 
 __all__ = ["User", "TypeAccount"]
-class User(db.Model):
+class User(db.Model, UserMixin):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True, nullable=False)

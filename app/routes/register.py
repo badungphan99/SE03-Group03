@@ -28,7 +28,7 @@ def register():
         else:
             insert_new_user(_type_account, _username, _passwd, _full_name, _email, _birthday, _highest_degree, _university, _major)
             flash("success")
-            return render_template('register.html')
+            return redirect('/register.html')
     else:
         flash(status)
         return redirect('/register.html')
