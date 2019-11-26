@@ -24,15 +24,15 @@
             <h3> LOGIN NOW</h3>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="row">
-                    <form action="/login" name="login-form" method="POST">
+                    <form action="block_home.html" name="login-form" method="POST">
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
-                                <input type="text" name="username" id="" class="form-control" placeholder="username">
+                                <input type="text" name="username" id="username" class="form-control" placeholder="username">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
-                                <input type="password" name="password" id="" class="form-control" placeholder="password">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
-                                <button name="submit" type="submit" class="btn-login">LOGIN</button>
+                                <button name="submit" type="submit" class="btn-login"id="submit" onclick="validate()">LOGIN</button>
                             </div>
                         </div>
                         <div class="form-group user-register">
@@ -67,4 +67,5 @@
         <div class="col-xs-2 col-sm-3 col-md-3 col-lg-4"></div>
     </section>
 </body>
+<script src="../static/js/check-login.js"></script>
 </html>
