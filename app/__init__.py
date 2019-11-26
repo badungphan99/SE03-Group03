@@ -5,7 +5,10 @@ from config import config
 
 db = SQLAlchemy()
 
-app = Flask(__name__, template_folder="template")
+app = Flask(__name__)
+
+from app.routes import *
+
 config_name = config
 
 if not isinstance(config, str):

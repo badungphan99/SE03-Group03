@@ -18,7 +18,6 @@ def recreate_db():
     """
     Recreates a local database. Not use this on production
     """
-
     db.drop_all()
     db.create_all()
     db.session.commit()
