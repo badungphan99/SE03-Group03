@@ -1,28 +1,16 @@
-import os
-from flask import render_template, request
-from app import app
-# app = create_app(os.getenv('FLASK_CONFIG'))
+from app.models import *
+from app import db
 
-@app.route('/')
-def main():
-    return render_template('block_home.html')
+def check_user_name(username):
+    user = db.session.query(User).filter(User.username.like(username)).first()
+    if(user):
+        return 1
+    else:
+        return 0
 
-@app.route('/register.html')
-def render():
-    return render_template('register.html')
-
-@app.route('/register', methods=['POST'])
-def register():
-    _username = request.form.get('username')
-    _passwd = request.form.get('password')
-    _email = request.form.get('email')
-    _birthday = request.form.get('birthday')
-    # _typeaccount = request.form.get('typeaccount')
-    print(_username, _passwd, _email, _birthday)
-
-
-
-    return 'notvalid'
-
-if __name__ == '__main__':
-    app.run()
+def insert_new_user(type_user, username, passwd, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
+    type_account = TypeAccount(type_user)
+    user = User(username, passwd, fullname, email)
+    # type_account.users.append(user)
+    db.session.add(user)
+    db.session.commit()
