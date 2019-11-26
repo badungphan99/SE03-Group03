@@ -1,6 +1,7 @@
 from app import db
 from sqlalchemy.sql import func
 
+__all__ = ["Forum", "Post"]
 class Forum(db.Model):
     __tablename__ = 'forum'
     id = db.Column(db.Integer, primary_key=True)

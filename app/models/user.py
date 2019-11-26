@@ -1,6 +1,7 @@
 from app import db
 from sqlalchemy.sql import func
 
+__all__ = ["User", "TypeAccount"]
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)

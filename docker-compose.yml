@@ -6,11 +6,11 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
     env_file:
-      - server/env/db_setting.env
+      - env/db_setting.env
     ports:
       - '3306:3306'
     volumes:
-      - ./server/data/db:/var/lib/mysql
+      - ./data/db:/var/lib/mysql
 
   phpmyadmin:
     depends_on:
@@ -18,6 +18,6 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: unless-stopped
     env_file:
-      - server/env/pma_setting.env
+      - env/pma_setting.env
     ports:
       - 80:80
