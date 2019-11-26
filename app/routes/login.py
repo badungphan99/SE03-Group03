@@ -17,3 +17,9 @@ def process_login():
         session['username'] = _username
     flash(status)
     return redirect('/login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect('/block_home.html')
