@@ -5,7 +5,7 @@ from config import config
 
 db = SQLAlchemy()
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template")
 config_name = config
 
 if not isinstance(config, str):
