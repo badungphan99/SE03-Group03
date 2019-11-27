@@ -18,22 +18,12 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 @manager.command
-def recreate_db():
+def migrate():
     """
     Recreates a local database. Not use this on production
     """
-    db.drop_all()
     db.create_all()
     db.session.commit()
-
-@manager.command
-def migrate_type_account():
-    type_account = TypeAccount('student')
-    db.session.add(type_account)
-    db.session.commit()
-@manager.command
-def runcode():
-    app.run(host='0.0.0.0', port=80)
 
 if __name__ == '__main__':
     manager.run()
