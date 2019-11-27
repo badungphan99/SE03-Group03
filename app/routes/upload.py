@@ -3,9 +3,14 @@ from app import app
 from flask import render_template, request, flash, redirect
 from werkzeug.utils import secure_filename
 import urllib.request
+from dotenv import load_dotenv
+
+
+load_dotenv(dotenv_path='./env/data_upload.env')
+COURSE_DOCUMENT = os.getenv('COURSE_DOCUMENT')
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
-UPLOAD_FOLDER = '/home/hoangi19/cnpm/SE03-Group03/uploads'
+UPLOAD_FOLDER = COURSE_DOCUMENT
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
