@@ -1,6 +1,6 @@
 import os
 from flask_migrate import Migrate, MigrateCommand
-from flask_script import Manager, Shell
+from flask_script import Manager
 from app import *
 from dotenv import load_dotenv
 from app.models import *
@@ -20,7 +20,7 @@ def load_user(user_id):
 @manager.command
 def migrate():
     """
-    Recreates a local database. Not use this on production
+    Creates database. Use only in first time
     """
     db.create_all()
     db.session.commit()
