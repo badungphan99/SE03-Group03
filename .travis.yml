@@ -1,9 +1,19 @@
 language: python
+
 python:
   - "3.6"
-install:
-  - pip3 install -r requirements.txt
-before_script:
-  - export FLASK_APP="$TRAVIS_BUILD_DIR/manage.py"
-  - export FLASK_DEBUG=1
-script: python3 manage.py migrate
+
+sudo: required
+
+services:
+  - docker
+
+env:
+  COMPOSE_VERSION: 1.24.1
+
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+script: docker-compose up
