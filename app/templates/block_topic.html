@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>OpenSchool-Coursera</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+
+    <!--core js-->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="header" class="header" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
+                <a href="block_home.html"><h3>OpenSchool</h3></a>
+            </div>
+            <div class="col-md-6 col-sm-12 menu-home">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Learning
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Arts and Humanities</a>
+                        <a class="dropdown-item" href="#">Business</a>
+                        <a class="dropdown-item" href="#">Computer Science</a>
+                        <a class="dropdown-item" href="#">Data Science</a>
+                        <a class="dropdown-item" href="#">Information Technology</a>
+                        <a class="dropdown-item" href="#">Social Sciences</a>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 header-search">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Education" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-sm-6 col-md-4 header-login-signup">
+            <button type="button" class="btn btn-primary btn-login" id="btn-login"><a href="login.html">Login</a></button>
+            <button type="button" class="btn btn-link btn-signup" id="btn-signup"><a href="register.html">Sign up</a></button>
+        </div> -->
+        <div class="col-sm-6 col-md-4 ">
+            <div class="col-md-6 col-sm-12 account-header">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">Setting</a>
+                        <a class="dropdown-item" href="#">Help Center</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="body" class="container-fluid body">
+    <div class="container-fluid topic-head">
+        <div class="row topic-head-back">
+            <a href="#">
+                <img src="../static/images/topic.jpg" class="img-thumbnail d-block img-topic-head" alt="...">
+            </a>
+            <div class="topic-head-cap">
+                <h5>Computer Science</h5>
+                <p>100% online learning from the world’s best universities and companies</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid list-key">
+       <div class="row">
+            <ul>
+                <li>
+                    <a href="">
+                        Software Development
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Mobile and web Development
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Algorithms
+                    </a>
+                </li>
+            </ul>
+       </div>
+    </div>
+    <div class="topic-coursera">
+        <div class="container list-body-cousera">
+            <div class="row">
+                <div class="title-course-topic">
+                    <h5>Software Development</h5>
+                </div>
+            </div>
+            <div class="container">
+                <div class="" style="margin: auto;">
+                    <div class="well">    
+                        <div id="carouselExampleCaptions" class="carousel slide"data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                        <li data-target="carouselExampleCaptions" data-slide-to="2"></li>
+                                </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container list-body-cousera">
+            <div class="row">
+                <div class="title-course-topic">
+                    <h5>Mobile and Web Development</h5>
+                </div>
+            </div>
+            <div class="container">
+                <div class="" style="margin: auto;">
+                    <div class="well">    
+                        <div id="carouselExampleCaptions2" class="carousel slide"data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleCaptions2" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleCaptions2" data-slide-to="1"></li>
+                                        <li data-target="carouselExampleCaptions2" data-slide-to="2"></li>
+                                </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container list-body-cousera">
+            <div class="row">
+                <div class="title-course-topic">
+                    <h5>Algorithms</h5>
+                </div>
+            </div>
+            <div class="container">
+                <div class="" style="margin: auto;">
+                    <div class="well">    
+                        <div id="carouselExampleCaptions3" class="carousel slide"data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                        <li data-target="#carouselExampleCaptions3" data-slide-to="0" class="active"></li>
+                                        <li data-target="#carouselExampleCaptions3" data-slide-to="1"></li>
+                                        <li data-target="#carouselExampleCaptions3" data-slide-to="2"></li>
+                                </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 cousera-item">
+                                            <a href="">
+                                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                            </a>
+                                            <a href="">
+                                                <h4 class="cousera-name">Technology</h4>
+                                            </a>
+                                            <div class="cousera-info">
+                                                <div class="teacher-name">
+                                                    Teacher:<span>Mr.David</span>
+                                                </div>
+                                                <div class="price">
+                                                    Price:<span> Free</span>
+                                                </div>
+                                                <div class="more">
+                                                    <button class="btn btn-secondary btn-more">See more</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleCaptions3" role="button" data-slide="prev">
+                                    <i class="fa fa-chevron-left"></i>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleCaptions3" role="button" data-slide="next">
+                                    <i class="fa fa-chevron-right"></i>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="title-course-topic">
+                <h5>What Coursera Has to Offer</h5>
+            </div>
+        </div>
+        <div class="explanation-table">
+            <div class="table-row table-header">
+                <div class="first-column">
+                    <span>learning program</span>
+                </div>
+                <div class="second-column">
+                    <span>description</span>
+                </div>
+            </div>
+            <div class="table-row"> 
+                <div class="first-column">
+                   <div class="productType item01">COURSE</div>
+                </div>
+                <div class="second-column">
+                    <p>
+                        Take courses from the world's best instructors and universities. 
+                        Courses include recorded auto-graded and peer-reviewed assignments, 
+                        video lectures, and community discussion forums. 
+                        When you complete a course, you’ll be eligible to receive a 
+                        shareable electronic Course Certificate for a small fee.
+                    </p>
+                </div>
+            </div>
+            <div class="table-row"> 
+                <div class="first-column">
+                    <div class="productType item02">SPECIALIZATION</div>
+                </div>
+                <div class="second-column">
+                    <p>
+                        Enroll in a Specialization to master a specific career skill. You’ll complete a series of rigorous courses, tackle hands-on projects, and earn a Specialization
+                        Certificate to share with your professional network and potential employers.   
+                    </p>
+                </div>
+            </div>
+            <div class="table-row"> 
+                <div class="first-column">
+                    <div class="productType item03">PROFESSIONAL CERTIFICATE</div>
+                </div>
+                <div class="second-column">
+                    <p>
+                            Whether you’re looking to start a new career or change your current one,
+                            Professional Certificates on Coursera help you become job ready.
+                            Learn at your own pace from top companies and universities,
+                            apply your new skills to hands-on projects that showcase your 
+                            expertise to potential employers, 
+                            and earn a career credential to kickstart your new career.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer" class="container-fluid footer">
+    <div class="row">
+        <div class="col-md-5 footer-left">
+            <h3><a href="">OpenSchool</a></h3>
+            <div class="footer-intro">
+                <p>
+                    Coursera provides universal access to the world’s best education,
+                        partnering with top universities and organizations to offer courses online.
+                </p>
+                <span> @2019 Coursera Inc. All rights reserved.</span>
+            </div>
+        </div>
+        <div class="col-md-6 footer-more">
+            <div class="col-md-4 footer-more-item">
+                <h5>cousera</h5>
+                <ul>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+                        <a href="">Certificates</a>
+                    </li>
+                    <li>
+                        <a href="">Leadership</a>
+                    </li>
+                    <li>
+                        <a href="">Catalog</a>
+                    </li>
+                    <li>
+                        <a href="">For Campus</a>
+                    </li>
+                    <li>
+                        <a href="">For Student</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 footer-more-item">
+                <h5>COMMUNITY</h5>
+                    <ul>
+                        <li>
+                            <a href="">Learners</a>
+                        </li>
+                        <li>
+                            <a href="">Partners</a>
+                        </li>
+                        <li>
+                            <a href="">Developers</a>
+                        </li>
+                        <li>
+                            <a href="">Students</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="col-md-4 footer-more-item">
+                <h5>CONNECT</h5>
+                    <ul>
+                        <li>
+                            <a href="">Blog</a>
+                        </li>
+                        <li>
+                            <a href="">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="">Youtube</a>
+                        </li>
+                        <li>
+                            <a href="">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="">Lotus</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
