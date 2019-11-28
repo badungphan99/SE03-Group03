@@ -20,9 +20,9 @@ class DevelopmentConfig(Config):
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
 
     DEBUG = True
-    if(DEBUG):
+    # if(DEBUG):
         # MYSQL_USER = 'root'
-        MYSQL_HOST = 'localhost'
+        # MYSQL_HOST = 'localhost'
         # MYSQL_PASSWORD = 'root'
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://' + str(MYSQL_USER) + ':' + str(MYSQL_PASSWORD) + '@' + str(MYSQL_HOST) + ':' + str(MYSQL_PORT) + '/' + str(MYSQL_DATABASE)
 
