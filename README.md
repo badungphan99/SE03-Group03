@@ -12,8 +12,6 @@ Tạo ra một nền tảng cho phép người dùng có thể tạo lớp học
 - Python3
 - Flask
 - SQLAlchemy
-- PHP
-- Yii
 - Docker
 
 ## Chức năng chính
@@ -39,10 +37,8 @@ Tạo ra một nền tảng cho phép người dùng có thể tạo lớp học
 
 ## Cài đặt
 
-- docker https://docs.docker.com/install/
-- docker-compose https://docs.docker.com/compose/install/
-- `$ docker-compose up -d`
-- docker cho môi trường python chưa có
+- `$ ./install_docker.sh`
+- `$ ./build`
 
 ## Thành viên nhóm
 
