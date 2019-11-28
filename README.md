@@ -48,6 +48,6 @@ Tạo ra một nền tảng cho phép người dùng có thể tạo lớp học
 
 - Phan Bá Dũng
 - Nguyễn Thị Kim Cúc
-- Phạm Thu Hạnh
+- Phạm Thi Thu Hạnh
 - Nguyễn Việt Hoàng 
    
