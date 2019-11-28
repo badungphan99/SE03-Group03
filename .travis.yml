@@ -3,5 +3,7 @@ python:
   - "3.6"
 install:
   - pip3 install -r requirements.txt
-script:
-  - python3 manager.py runserver
+before_script:
+  - export FLASK_APP="$TRAVIS_BUILD_DIR/manage.py"
+  - export FLASK_DEBUG=1
+script: flask test
