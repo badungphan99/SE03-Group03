@@ -6,4 +6,6 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-CMD ["python3", "manage.py", "build"]
+ENTRYPOINT ["./entrypoint.sh"]
+
+CMD ["python3", "./manage.py", "runserver"]

@@ -29,4 +29,5 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./data/WebData:/app/WebData
+      - ./data/WebData/Course_Document:/app/WebData/Course_Document
+      - ./data/WebData/Course_img:/app/WebData/Course_img
