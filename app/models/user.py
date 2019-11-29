@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
 
     type_id = db.Column(db.Integer, db.ForeignKey('type_account.id'))
     students = db.relationship('StudentCourse', backref='user', lazy='dynamic')
+    file_uploads = db.relationship('FileUpload', backref='user', lazy='dynamic')
 
     def __init__(self, username, password, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
         self.username = username
