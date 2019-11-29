@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 ENTRYPOINT ["./entrypoint.sh"]
 
-CMD ["python3", "./manage.py", "runserver"]
+CMD ["python3", "./manage.py", "build"]
