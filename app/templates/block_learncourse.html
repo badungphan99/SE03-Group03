@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>OpenSchool-Coursera</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!-- core js -->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div id="header" class="header" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
+                    <a href="block_home.html"><h3>OpenSchool</h3></a>
+                </div>
+                <div class="col-md-6 col-sm-12 menu-home">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Learning
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Arts and Humanities</a>
+                          <a class="dropdown-item" href="#">Business</a>
+                          <a class="dropdown-item" href="#">Computer Science</a>
+                          <a class="dropdown-item" href="#">Data Science</a>
+                          <a class="dropdown-item" href="#">Information Technology</a>
+                          <a class="dropdown-item" href="#">Social Sciences</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 header-search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Education" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-6 col-md-4 header-login-signup">
+                <button type="button" class="btn btn-primary btn-login" id="btn-login"><a href="login.html">Login</a></button>
+                <button type="button" class="btn btn-link btn-signup" id="btn-signup"><a href="register.html">Sign up</a></button>
+            </div> -->
+            <div class="col-sm-6 col-md-4 ">
+                <div class="col-md-6 col-sm-12 account-header">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                          <a class="dropdown-item" href="#">Profile</a>
+                          <a class="dropdown-item" href="#">Setting</a>
+                          <a class="dropdown-item" href="#">Help Center</a>
+                          <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="body" class="body">
+        <div class="container-fluid">
+            <div class="row learn-head">
+                <div class="col-md-5 learn-head-left">
+                    <div class="learn-caption">
+                        <div class="col-md-12">
+                           <h5>Technology</h5>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="star-rating">
+                                <span class="fa fa-star-o" data-rating="1"></span>
+                                <span class="fa fa-star-o" data-rating="2"></span>
+                                <span class="fa fa-star-o" data-rating="3"></span>
+                                <span class="fa fa-star-o" data-rating="4"></span>
+                                <span class="fa fa-star-o" data-rating="5"></span>
+                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="btn-enroll">
+                            <button target="_blank" class="enroll">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="offer-by">
+                       <span>Offer by</span>
+                       <h5>Stanford</h5>
+                       <p style="font-style: italic;font-family: 'Times New Roman', Times, serif;">Welcome to our course, where you will learn extremely
+                        useful knowledge in a comprehensive way from theory to practice. 
+                        Quality always goes with our work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row learn-body">
+                <div class="col-md-8 learn-body-left">
+                    <div class="video-course">
+                        <iframe gesture="media" allow="encrypted-media" allowfullscreen="" src="https://www.youtube.com/embed/v4g2g6fP6tU?rel=0" frameborder="0"></iframe>
+                    </div>
+                    <div class="comment-container" class="comment-container">
+                        <ul class="nav nav-pills comment-tab">
+                            <li class="li-tab user-tab active">
+                                <a data-toggle="pill" href="#user-comment-content">Ý kiến học viên</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="user-comment-content" class="tab-pane fade active in">
+                                <div class="list-comments">
+                                    <div class="input-comment-container">
+                                        <p>
+                                            <b>post comment</b>
+                                        </p>
+                                        <div class="form_action">
+                                            <img src="https://dungmori.com/cdn/avatar/small/1566741552_1265300775_43e105_72d6c8.jpeg" class="me-avatar"> 
+                                            <div style="position: relative;">
+                                                <textarea data-emoji-picker="true" id="comment-content" rows="1" placeholder="comment..." class="input-comment" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 42px; width: 100%;"></textarea>
+                                            </div>
+                                            <button class="post-comment-btn">Đăng</button>
+                                        </div>
+                                    </div>
+
+                                    <ul>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <ul id="more-comment">
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="more-comment" id="show">
+                                        <button class="btn btn-primary btn-more-comment" id="show">
+                                            More comment
+                                            <img src="https://dungmori.com/assets/img/loading.gif" class="loading-icon">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 learn-body-right">
+                    <div class="intro">
+                        <div class="buy-item">
+                            <a href="#">
+                                <div class="btn-buy">Buy this Course</div>
+                            </a>
+                        </div>
+                        <div class="">
+                                <a href="#">
+                                    <div class="see-more-courses">See more courses 
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                        </div>
+                    </div>
+                    <div class="list-lesson">
+                        <nav class="main-nav">
+                            <h3>ALL LESSON</h3>
+                            <ul class="main-nav-ul">
+                                <li><a href="#">Lesson1: Introduce</a></li>
+                                <li><a href="#">Lesson2: Introduce</a></li>
+                                <li><a href="#">Lesson3: Introduce</a></li>
+                                <li><a href="#">Lesson4: Introduce</a></li>
+                                <li><a href="#">Lesson5: Introduce</a></li>
+
+                                <li><a href="#">Lesson6: Introduce</a></li>
+                                <li><a href="#">Lesson7: Introduce</a></li>
+                                <li><a href="#">Lesson8: Introduce</a></li>
+                                <li><a href="#">Lesson9: Introduce</a></li>
+                                <li><a href="#">Lesson10: Introduce</a></li>
+
+                                <li><a href="#">Lesson11: Introduce</a></li>
+                                <li><a href="#">Lesson12: Introduce</a></li>
+                                <li><a href="#">Lesson13: Introduce</a></li>
+                                <li><a href="#">Lesson14: Introduce</a></li>
+                                <li><a href="#">Lesson15: Introduce</a></li>
+
+                            </ul>
+        
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+    
+    </div>
+
+    <div id="footer" class="container-fluid footer">
+        <div class="row">
+            <div class="col-md-5 footer-left">
+                <h3><a href="">OpenSchool</a></h3>
+                <div class="footer-intro">
+                    <p>
+                        Coursera provides universal access to the world’s best education,
+                            partnering with top universities and organizations to offer courses online.
+                    </p>
+                    <span> @2019 Coursera Inc. All rights reserved.</span>
+                </div>
+            </div>
+            <div class="col-md-6 footer-more">
+                <div class="col-md-4 footer-more-item">
+                    <h5>cousera</h5>
+                    <ul>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Certificates</a>
+                        </li>
+                        <li>
+                            <a href="">Leadership</a>
+                        </li>
+                        <li>
+                            <a href="">Catalog</a>
+                        </li>
+                        <li>
+                            <a href="">For Campus</a>
+                        </li>
+                        <li>
+                            <a href="">For Student</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-more-item">
+                    <h5>COMMUNITY</h5>
+                        <ul>
+                            <li>
+                                <a href="">Learners</a>
+                            </li>
+                            <li>
+                                <a href="">Partners</a>
+                            </li>
+                            <li>
+                                <a href="">Developers</a>
+                            </li>
+                            <li>
+                                <a href="">Students</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="col-md-4 footer-more-item">
+                    <h5>CONNECT</h5>
+                        <ul>
+                            <li>
+                                <a href="">Blog</a>
+                            </li>
+                            <li>
+                                <a href="">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="">Youtube</a>
+                            </li>
+                            <li>
+                                <a href="">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="">Lotus</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function(){
+     $('button').click(function(){
+         $('#more-comment').toggle(800);
+     });
+ });
+ </script>
+<script src="../static/js/ratting.js"></script>
+<script src="../static/js/time.js"></script>
+<!-- <script>
+    var $star_rating = $('.star-rating .fa');
+
+    var SetRatingStar = function() {
+    return $star_rating.each(function() {
+        if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+        return $(this).removeClass('fa-star-o').addClass('fa-star');
+        } else {
+        return $(this).removeClass('fa-star').addClass('fa-star-o');
+        }
+    });
+    };
+
+    $star_rating.on('click', function() {
+    $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+    return SetRatingStar();
+    });
+
+    SetRatingStar();
+    $(document).ready(function() {
+
+    });
+</script> -->
+</html>
