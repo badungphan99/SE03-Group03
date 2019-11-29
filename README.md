@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.com/badungphan99/SE03-Group03.svg?branch=master)](https://travis-ci.com/badungphan99/SE03-Group03)
 # Openschool
 
-repo của nhóm 3 lớp công nghệ phần mềm SE03 hiện tại đang trong giai đoạn bàn bạc và đưa ra ý kiến nên tạm thời không có gì ở đây hết
 
 ## Mục tiêu, định hướng, các kết quả cần đạt
 

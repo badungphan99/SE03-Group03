@@ -1,6 +1,14 @@
 version: "3"
 
 services:
+  web:
+    build: .
+    ports:
+      - '80:80'
+    volumes:
+      - ./data/WebData/Course_Document:/app/WebData/Course_Document
+      - ./data/WebData/Course_img:/app/WebData/Course_img
+      - .:/app
   db:
     depends_on:
       - phpmyadmin
@@ -22,11 +30,3 @@ services:
       - env/pma_setting.env
     ports:
       - '8080:80'
-
-  web:
-    build: .
-    ports:
-      - '80:80'
-    volumes:
-      - ./data/WebData/Course_Document:/app/WebData/Course_Document
-      - ./data/WebData/Course_img:/app/WebData/Course_img

@@ -1,4 +1,5 @@
 import os
+import time
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from app import *
@@ -22,13 +23,12 @@ def migrate():
     """
     Creates database. Use only in first time
     """
+    time.sleep(15)
     db.create_all()
     db.session.commit()
 
 @manager.command
 def build():
-    db.create_all()
-    db.session.commit()
     app.run(host='0.0.0.0', port=80)
 
 if __name__ == '__main__':
