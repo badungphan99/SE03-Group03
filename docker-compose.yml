@@ -2,6 +2,9 @@ version: "3"
 
 services:
   db:
+    depends_on:
+      - phpmyadmin
+      - web
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped
@@ -13,8 +16,6 @@ services:
       - ./data/db:/var/lib/mysql
 
   phpmyadmin:
-    depends_on:
-      - db
     image: phpmyadmin/phpmyadmin
     restart: unless-stopped
     env_file:
@@ -23,8 +24,6 @@ services:
       - '8080:80'
 
   web:
-    depends_on:
-      - db
     build: .
     ports:
       - '80:80'
