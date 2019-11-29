@@ -1,10 +1,12 @@
 import os
 from app import app
+from app.controller import *
 from flask import render_template, request, flash, redirect
 from werkzeug.utils import secure_filename
 import urllib.request
 from dotenv import load_dotenv
 
+from datetime import datetime
 
 load_dotenv(dotenv_path='./env/data_upload.env')
 COURSE_DOCUMENT = os.getenv('COURSE_DOCUMENT')
@@ -34,6 +36,11 @@ def upload_file():
 			return redirect(request.url)
 		if file and allowed_file(file.filename):
 			filename = secure_filename(file.filename)
+			now = datetime.now()
+			dt_string = now.strftime("%d.%m.%Y.%H.%M.%S.%f")
+			#untested
+			insert_file_to_db(filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, "", "")
+
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			flash('File successfully uploaded')
 			return redirect('/')
