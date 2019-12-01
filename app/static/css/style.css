@@ -402,6 +402,7 @@ a:hover{
     padding: 5px ;
     border-radius: 4px;
 }
+
 /* blocktopic */
 .topic-head{
     padding: 0;
@@ -501,6 +502,8 @@ a:hover{
 .item03{
     background-image: linear-gradient(90deg, #48cfad, #3bafda);
 }
+
+
 
 /* learn-course page */
 .learn-head{
@@ -829,6 +832,7 @@ a:hover{
 .list-lesson{
     padding: 0 30px;
 }
+
 #more-comment{
     display: none;
 }
@@ -839,13 +843,287 @@ a:hover{
 }
 
 
+/* my courses page*/
+.body-big{
+    background: #f5f5f5;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+.header-mycourse{
+    border-radius: 3px;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+
+}
+.course-summary{
+    display: inline-block;
+    padding: 20px 10%;
+    color: #272727;
+    font-size: 14px;
+    background-color: #fff;
+    line-height: 24px !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+.course-summary ul li{
+    width: 130px;
+    float: left;
+    margin: 0 20px;
+}
+.course-summary ul li p{
+    font-size: 18px;
+    color: #353535;
+}
+.img-count-courses {
+    background-position-y: -4937px;
+}
+.img-document-courses {
+    background-position-y: -5037px;
+}
+.img-kpoint-courses {
+    background-position-y: -6761px;
+}
+.img-courses {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    background-image: url(https://media.kyna.vn/src/img/icon-kyna.png);
+    background-repeat: no-repeat;
+    background-position-x: -50px;
+}
+
+.course-summary ul li span {
+    font-size: 24px;
+    font-weight: 400;
+    display: block;
+    margin-top: 15px;
+}
+.body-big ul#menu-courses {
+    position: absolute;
+    top: -60px;
+    border-bottom: none;
+    width: 100%;
+}
+.body-big ul.nav.nav-tabs {
+    margin: 10px auto;
+    font-size: 16px;
+    border-bottom: none;
+}
+.body-big ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+.body-big ul#menu-courses > li.active-tab, .body-big ul#menu-courses > li:hover {
+    background-color: white;
+    border-top: 2px solid #2a73cc;
+    border-bottom: none !important;
+    border-left: 1px solid #F5F5F5;
+    border-right: 1px solid #F5F5F5;
+}
+.body-big ul#menu-courses > li {
+    padding: 0;
+    border-top: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+}
+.mycourse{
+    min-height: 500px;
+    background: white;
+    padding-bottom: 40px;
+}
+.mycourse .mycourse-title{
+    width: 100%;
+    border-bottom: 1px solid #EEE;
+    height: 35px;
+    padding: 40px 0 40px 30px;
+}
+.tab-item {
+    float: left;
+    margin-right: 30px;
+    padding-bottom: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+.tab-item.active {
+    border-bottom: 2px solid #2A73CC;
+    color: #2A73CC;
+    height: 35px;
+}
+.mycourse-list
+{
+    margin-top: 40px;
+}
+.mycourse-list ul{
+    width: 100%;
+}
+.mycourse-list ul li .cousera-item{
+    margin: auto;
+}
+.mycourse-list ul li{
+    float: left;
+    margin: 45px;
+}
+.btn-continue{
+    background: #d9534f;
+    color: white;
+}
+.btn-continue:hover{
+    color: #d9534f;
+    background: white;
+    border: 1px solid #d9534f;
+}
+
+/* Page account */
+.file-upload input[type="file"] {
+    cursor: pointer;
+    opacity: 0;
+    filter: opacity(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.user-avatar{
+    margin:20px auto;
+    display:table
+}
+.user-avatar .file-upload{
+    display:table-cell;
+    width:122px;
+    height:122px;
+    border:1px solid transparent;
+    border-radius:100%;
+    vertical-align:middle;
+    position:relative;
+    text-align:center;
+    overflow:hidden
+}
+.user-avatar .file-upload.avatar-empty{
+    border-color:#ccc
+}
+.user-avatar .file-upload:hover::after{
+    content:"Đổi hình";
+    position:absolute;
+    top:0;
+    left:0;
+    width:120px;
+    height:120px;
+    line-height:120px;
+    color:#fff;
+    border-radius:50%;
+    background-color:rgba(0,0,0,.5)
+}
+#k-courses-header {
+    background: #F5F5F5;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+#k-courses-header header img{
+    width:120px;
+    height:120px;
+    object-fit:fill;
+    margin:0
+}
+.k-height-header h3{
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.acc-item{
+    padding: 15px;
+}
+.acc-item-lable{
+    font-weight: bold;
+    padding-left: 0;
+    line-height: 40px;
+    margin-bottom: 0;
+    height: 40px;
+
+}
+.left{
+    float: left;
+}
+.right{
+    float: left;
+}
+#profileform-gender {
+    text-align: left;
+    line-height: 40px;
+}
+#profileform-gender label {
+    padding-left: 30px;
+    background-position: -75px -181px;
+    margin-right: 12px;
+}
+#profileform-gender label.selected {
+    padding-left: 30px;
+    background-position: -75px -85px;
+    margin-right: 12px;
+}
+.right span.icon{
+    z-index: 99;
+    position: absolute;
+    line-height: 37px;
+    padding: 0 10px;
+    left: 12px;
+}
+.right input{
+    padding: 0 25px;
+}
+
+.fa-eye-slash:before {
+    content: "\f070";
+}
+.change-pass{
+    margin: 20px 0;
+    border-top: 1px solid #272727;
+}
+.change-pass .acc-item{
+    padding-left: 0;
+}
+.change-pass .btn-action{
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+.change-pass .button {
+    background-color:#2A73CC;
+    color: white;
+    padding: 10px 25px;
+    border-bottom: 2px solid #2A73CC;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+.change-pass .button-close {
+    color: #272727;
+    margin-left: 20px;
+    text-decoration: underline !important;
+}
+
+
+
+
+
 
 
 
 #footer{
+   
     min-height: 100px;
     /* overflow: hidden; */
-    background: #e8e1e1;
+    background: #e8e1e1
 }
 .footer-left{
     float: left;
