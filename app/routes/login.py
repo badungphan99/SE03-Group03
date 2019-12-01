@@ -12,11 +12,12 @@ def process_login():
     _passwd = request.form.get('password')
     
     status = check_login(_username, _passwd)
+    print(status)
     if status == True:
-        return redirect('block_course.html')
+        return 'block_course.html'
         session['username'] = _username
     flash(status)
-    return redirect('/login.html')
+    return 'login.html'
 
 @app.route('/logout')
 @login_required

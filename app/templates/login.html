@@ -24,7 +24,7 @@
             <h3> LOGIN NOW</h3>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="row">
-                    <form action="/login" name="login-form" method="POST" enctype="multipart/form-data">
+                    <!-- <form action="/login" name="login-form" method="POST" enctype="multipart/form-data"> -->
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
                                 <input type="text" name="username" id="username" class="form-control" placeholder="username">
@@ -41,8 +41,39 @@
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6 reset-password">
                                 <a href="#">Forgot Password ?</a>
+                                <span id=result>dmbodo</span>
                             </div>  
                         </div>
+                        <script>
+                            $.post("testajaxxx",
+                            {
+                                username: "aaaaa",
+                                password: "bbbbb"
+                            }, 
+                                function(data, status){
+                                    // alert(data)
+                                    document.getElementById("result").innerHTML = data
+                                });
+                        </script>
+
+                        <script>
+                            function login(){
+                                $.post("login",
+                                {
+                                    username: document.getElementById("username").value,
+                                    password: document.getElementById("password").value
+                                },
+                                function(data,status){
+                                    
+                                    alert(data)
+                                    window.location = data
+                                    
+                                    // window.location = "block_home.html"
+                                    // return data;
+                                });
+                            }
+                        </script>
+
                         <!-- show mess khi login that bai -->
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
@@ -61,7 +92,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12 col-md-12 col-lg-12 form-item">
-                                <button name="submit" type="submit" class="btn-login"id="submit">LOGIN</button>
+                                <button name="submit" type="submit" class="btn-login"id="submit" onclick="login()">LOGIN</button>
                             </div>
                         </div>
                         <div class="form-group user-register">
