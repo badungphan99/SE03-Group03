@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>OpenSchool-Coursera</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!--core js-->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="header" class="header" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
+                    <a href="block_home.html"><h3>OpenSchool</h3></a>
+                </div>
+                <div class="col-md-6 col-sm-12 menu-home">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Learning
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Arts and Humanities</a>
+                          <a class="dropdown-item" href="#">Business</a>
+                          <a class="dropdown-item" href="#">Computer Science</a>
+                          <a class="dropdown-item" href="#">Data Science</a>
+                          <a class="dropdown-item" href="#">Information Technology</a>
+                          <a class="dropdown-item" href="#">Social Sciences</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 header-search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Education" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-6 col-md-4 header-login-signup">
+                <button type="button" class="btn btn-primary btn-login" id="btn-login"><a href="login.html">Login</a></button>
+                <button type="button" class="btn btn-link btn-signup" id="btn-signup"><a href="register.html">Sign up</a></button>
+            </div> -->
+            <div class="col-sm-6 col-md-4 ">
+                <div class="col-md-6 col-sm-12 account-header">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                          <a class="dropdown-item" href="block_account.html">Profile</a>
+                          <a class="dropdown-item" href="#">Setting</a>
+                          <a class="dropdown-item" href="#">Help Center</a>
+                          <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body" id="body">
+        <div class="container" style="border: 1px solid #f6f6f6;padding-top: 15px;">
+            <section id="k-courses-header" class="k-height-header">
+                <header>
+                    <h3>Chỉnh sửa thông tin cá nhân</h3>
+
+                    <div class="user-avatar">
+                        <label class="file-upload" for="user-avatar" id="user-avatar-wrapper" data-file-upload="" data-upload-url="#" data-last-upload-url="">
+                            <img class="file-upload-img" src="../static/images/vd.jpg" alt="Hình đại diện" title="" data-img-large="#" data-original-title="Hình đại diện">
+                            <input type="hidden" name="User[avatar]" value="">
+                            <iframe id="user-avatar-wrapper-iframe" height="0" width="0" frameborder="0" name="user-avatar-wrapper-iframe" style="display:none" class="file-upload-iframe" src="#"></iframe>
+                            <form action="*upload len CSDL*" method="post" enctype="multipart/form-data" target="user-avatar-wrapper-iframe" class="file-upload-form">
+                                <input type="hidden" name="_csrf" value="">
+                                <input type="file" id="user-avatar" class="file-upload-input" name="User[avatar]" value="*link anh*" accept="image/*">
+                                <button type="submit" style="display:none" class="hide"></button>
+                            </form>
+                        </label>
+                        
+                        <script>
+                        $(".file-upload-input").change(function(){
+                            var fileExtension=['jpg','png'];
+                            if(
+                                $.inArray($(this).val().split('.').pop().toLowerCase(),
+                                fileExtension)==-1){alert("Chỉ chấp nhận file hình có đuôi : "+fileExtension.join(', '));
+                            return false;}});
+                        </script>
+                        
+                    </div>
+                </header>
+            </section>
+            <div class="row" style="padding: 15px;">
+                <div class="col-md-6">
+                    <div class="row acc-item">
+                        <div class="col-md-4 left">
+                           <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-name">Name</label>
+                           </label>
+                        </div>
+                        <div class="col-md-8 right">
+                            <span class="icon">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" id="profileform-name" class="form-control" name="ProfileForm[name]">
+                        </div>
+                    </div>
+                    <div class="row acc-item">
+                        <div class="col-md-4 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-gender">Gender</label>
+                            </label>
+                        </div>
+                        <div class="col-md-8 right">
+                            <input type="hidden" name="ProfileForm[gender]" value="">
+                            <div id="profileform-gender">
+                                <label class="gender-label">
+                                    <input type="radio" class="gender-input" name="ProfileForm[gender]" value="0" checked=""> Nữ
+                                </label>
+                                <label class="gender-label selected">
+                                    <input type="radio" class="gender-input" name="ProfileForm[gender]" value="1"> Nam
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row acc-item">
+                        <div class="col-md-4 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-phone">PhoneNumber</label>
+                            </label>
+                        </div>
+                        <div class="col-md-8 right">
+                            <span class="icon">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" id="profileform-phone" class="form-control" name="ProfileForm[phonenumber]">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row acc-item">
+                        <div class="col-md-4 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-email">Email</label>
+                            </label>
+                        </div>
+                        <div class="col-md-8 right">
+                            <span class="icon">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" id="profileform-email" class="form-control" name="ProfileForm[email]">
+                        </div>
+                    </div>
+                    <div class="row acc-item">
+                        <div class="col-md-4 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-birthday">Birthday</label>
+                            </label>
+                        </div>
+                        <div class="col-md-8 right">
+                            <span class="icon">
+                                <i class="fa fa-birthday-cake" aria-hidden="true"></i>
+                            </span>
+                            <input type="date" name="birthday" id="" class="mycalender form-control" placeholder="birthday">
+                        </div>
+                    </div>
+                    <div class="row acc-item">
+                        <div class="col-md-4 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-address">Address</label>
+                            </label>
+                        </div>
+                        <div class="col-md-8 right">
+                            <span class="icon">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            </span>
+                            <input type="text" id="profileform-address" class="form-control" name="ProfileForm[address]">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row change-pass">
+                <div class="col-md-12">
+                    <div class="col-md-6" style="padding: 0;">
+                        <div class="row acc-item">
+                            <div class="col-md-4 left">
+                                <label class="acc-item-lable">
+                                    <label class="acc-item-lable"for="profileform-current_password">Password</label>
+                                </label>
+                            </div>
+                            <div class="col-md-8 right">
+                                <span class="icon">
+                                    <i class="fa fa-lock" aria-hidden="true"></i>
+                                    <!-- <i class="fa fa-eye-slash" aria-hidden="true" style="display: block;"></i> -->
+                                </span>
+                                <input type="password" id="profileform-current_password" class="form-control" name="ProfileForm[current_password]"  placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row acc-item">
+                        <div class="col-md-2 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-new_password">Name</label>
+                            </label>
+                        </div>
+                        <div class="col-md-4 right">
+                            <span class="icon">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                            <input type="password" id="profileform-new_password" class="form-control" name="ProfileForm[new_password]"  placeholder="New Password">
+                        </div>
+                    </div>
+                    <div class="row acc-item">
+                        <div class="col-md-2 left">
+                            <label class="acc-item-lable">
+                                <label class="acc-item-lable"for="profileform-new_password_repeat">Repeat Password</label>
+                            </label>
+                        </div>
+                        <div class="col-md-4 right">
+                            <span class="icon">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                            </span>
+                            <input type="password" id="profileform-new_password_repeat" class="form-control" name="ProfileForm[new_password_repeat]"  placeholder="Repeat Password">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="margin: 20px">
+                    <div class="col-md-6 btn-action">
+                        <button type="submit" class="button" style="margin: auto;">Lưu</button>
+                        <a href="#" id="btn-reset-edit-profile" class="button-close">Hủy </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="container-fluid footer">
+        <div class="row">
+            <div class="col-md-5 footer-left">
+                <h3><a href="">OpenSchool</a></h3>
+                <div class="footer-intro">
+                    <p>
+                        Coursera provides universal access to the world’s best education,
+                            partnering with top universities and organizations to offer courses online.
+                    </p>
+                    <span> @2019 Coursera Inc. All rights reserved.</span>
+                </div>
+            </div>
+            <div class="col-md-6 footer-more">
+                <div class="col-md-4 footer-more-item">
+                    <h5>cousera</h5>
+                    <ul>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Certificates</a>
+                        </li>
+                        <li>
+                            <a href="">Leadership</a>
+                        </li>
+                        <li>
+                            <a href="">Catalog</a>
+                        </li>
+                        <li>
+                            <a href="">For Campus</a>
+                        </li>
+                        <li>
+                            <a href="">For Student</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-more-item">
+                    <h5>COMMUNITY</h5>
+                        <ul>
+                            <li>
+                                <a href="">Learners</a>
+                            </li>
+                            <li>
+                                <a href="">Partners</a>
+                            </li>
+                            <li>
+                                <a href="">Developers</a>
+                            </li>
+                            <li>
+                                <a href="">Students</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="col-md-4 footer-more-item">
+                    <h5>CONNECT</h5>
+                        <ul>
+                            <li>
+                                <a href="">Blog</a>
+                            </li>
+                            <li>
+                                <a href="">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="">Youtube</a>
+                            </li>
+                            <li>
+                                <a href="">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="">Lotus</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
