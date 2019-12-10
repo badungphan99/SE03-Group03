@@ -8,6 +8,16 @@ def render_course():
     topic = get_topic()
     return render_template('block_course.html')
 
+@app.route('/block_learncourse.html', endpoint='render_learncourse')
+def render_learncourse():
+    topic = get_topic()
+    return render_template('block_learncourse.html')
+
+@app.route('/block_topic.html', endpoint='render_topic')
+def render_topic():
+    topic = get_topic()
+    return render_template('block_topic.html')
+
 @app.route("/testajax", methods=['POST'])
 def ajaxtest():
     topic = ["Business", "Computer Science", "Data Science", "Information Technology", "Social Sciences"]

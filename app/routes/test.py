@@ -1,5 +1,5 @@
 from app import *
-from flask import render_template, session, jsonify, request
+from flask import render_template, session, jsonify, request, json
 
 
 @app.route('/test', endpoint='render_test')
@@ -9,7 +9,15 @@ def render_test():
 
 @app.route('/testajaxxx', endpoint='test_ajax', methods=['GET', 'POST'])
 def test_ajax():
-    _username = request.form.get('username')
-    _passwd = request.form.get('password')
-    
-    return jsonify('message')
+    a = {
+        "topic" : [{
+                "name" : "Arts and Humanities",
+                "link" : "login.html"
+            },
+            {
+                "name":"xzcdsfdx",
+                "link":"login.html"
+            }
+        ]
+    }
+    return jsonify(a)
