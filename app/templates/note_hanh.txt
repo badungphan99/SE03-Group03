@@ -1,0 +1,28 @@
+ <div class="container mycourse">
+    <div class="row mycourse-title">
+        <div class="tab-item active">
+            Add new course
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="DisplayName" value="">
+                <input type="text" class="form-control hide" name="Id">
+            </div>
+            <div id="sample-code" class="form-group">
+                <label>Mo ta</label>
+                <textarea id="SampleCode" class="form-control" rows="10" name="SampleCode"></textarea>
+            </div>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    
+
+    <div class="row banner-ads">
+
+    </div>
+</div>
+
+//tao bai hoc , k phai khoa hoc
