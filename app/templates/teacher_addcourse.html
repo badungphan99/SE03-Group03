@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>OpenSchool-Coursera</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!--core js-->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="header" class="header" class="container-fluid" style="margin-bottom: 0px;">
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
+                    <a href="block_home.html"><h3>OpenSchool</h3></a>
+                </div>
+                <div class="col-md-6 col-sm-12 menu-home">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Learning
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Arts and Humanities</a>
+                          <a class="dropdown-item" href="#">Business</a>
+                          <a class="dropdown-item" href="#">Computer Science</a>
+                          <a class="dropdown-item" href="#">Data Science</a>
+                          <a class="dropdown-item" href="#">Information Technology</a>
+                          <a class="dropdown-item" href="#">Social Sciences</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 header-search">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Education" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-6 col-md-4 header-login-signup">
+                <button type="button" class="btn btn-primary btn-login" id="btn-login"><a href="login.html">Login</a></button>
+                <button type="button" class="btn btn-link btn-signup" id="btn-signup"><a href="register.html">Sign up</a></button>
+            </div> -->
+            <div class="col-sm-6 col-md-4 ">
+                <div class="col-md-6 col-sm-12 account-header">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                          <a class="dropdown-item" href="#">Profile</a>
+                          <a class="dropdown-item" href="#">Setting</a>
+                          <a class="dropdown-item" href="#">Help Center</a>
+                          <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body body-big" id="body">
+        <div class="container mycourse">
+            <div class="row mycourse-title">
+                <div class="tab-item active">
+                    Add new course
+                </div>
+            </div>
+           <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Name course</label>
+                        <input type="text" class="form-control" name="DisplayName" value="">
+                        <input type="text" class="form-control hide" name="Id">
+                    </div>
+                    <div class="form-group">
+                        <label>The loai</label>
+                        <input type="text" class="form-control" name="theloai" value="">
+                    </div>
+                    <div id="sample-code" class="form-group">
+                        <label>Mo ta</label>
+                        <textarea id="SampleCode" class="form-control" rows="10" name="SampleCode"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Thoi luong</label>
+                        <input type="text" class="form-control" name="thoiluong" value="">
+                    </div>
+                    <div class="row form-group ">
+                        <div class="col-md-6">
+                                <a href="">Cancle</a>
+                        </div>
+                        <div class="col-md-6"> 
+                               
+                                <button class="btn btn-primary" style="float: right">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+           </div>
+           
+
+            <div class="row banner-ads">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="container-fluid footer">
+        <div class="row">
+            <div class="col-md-5 footer-left">
+                <h3><a href="">OpenSchool</a></h3>
+                <div class="footer-intro">
+                    <p>
+                        Coursera provides universal access to the world’s best education,
+                            partnering with top universities and organizations to offer courses online.
+                    </p>
+                    <span> @2019 Coursera Inc. All rights reserved.</span>
+                </div>
+            </div>
+            <div class="col-md-6 footer-more">
+                <div class="col-md-4 footer-more-item">
+                    <h5>cousera</h5>
+                    <ul>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Certificates</a>
+                        </li>
+                        <li>
+                            <a href="">Leadership</a>
+                        </li>
+                        <li>
+                            <a href="">Catalog</a>
+                        </li>
+                        <li>
+                            <a href="">For Campus</a>
+                        </li>
+                        <li>
+                            <a href="">For Student</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-more-item">
+                    <h5>COMMUNITY</h5>
+                        <ul>
+                            <li>
+                                <a href="">Learners</a>
+                            </li>
+                            <li>
+                                <a href="">Partners</a>
+                            </li>
+                            <li>
+                                <a href="">Developers</a>
+                            </li>
+                            <li>
+                                <a href="">Students</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="col-md-4 footer-more-item">
+                    <h5>CONNECT</h5>
+                        <ul>
+                            <li>
+                                <a href="">Blog</a>
+                            </li>
+                            <li>
+                                <a href="">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="">Youtube</a>
+                            </li>
+                            <li>
+                                <a href="">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="">Lotus</a>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
