@@ -15,9 +15,14 @@ def test_ajax():
                 "link" : "login.html"
             },
             {
-                "name":"xzcdsfdx",
+                "name":"ủeuqgoqwufq",
                 "link":"login.html"
             }
         ]
     }
     return jsonify(a)
+
+@app.route('/testajaxxx/<int:id>', endpoint='render_testxxx', methods=['GET', 'POST'])
+def render_testxxx(id):
+    id = 1
+    return render_template("login.html")
