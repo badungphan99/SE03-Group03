@@ -1225,3 +1225,54 @@ a:hover{
 textarea.form-control {
     height: auto;
 }
+
+/* teacher add course listitem */
+#table-list{
+    margin-top: 20px;
+    background: #f6f6f6
+}
+#btn-them{
+    padding: 4px;
+    background-color: #09F;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none
+}
+#btn-sua{
+    margin: auto;
+    padding: 4px;
+    background-color:green;
+    border-radius: 4px;
+    color: white;
+    float: left;
+    text-decoration: none
+}
+#btn-xoa{
+    margin: auto;
+    padding: 4px;
+    background-color: red;
+    border-radius: 4px;
+    color: white;
+    float: right;
+    text-decoration: none
+}
+#table-list tr td{
+    text-align: center
+}
+#table-list tr .align-name{
+    text-align: left
+}
+#table-list tr{
+    font-size:18px;
+    /* font-family: monospace */
+}
+#title-col #textbox{
+    font-size: 16px;
+    width: 97%;
+    padding: 5px;
+    border: 0;
+}
+#title-col p{
+    margin: 5px;
+    float: left;
+}
