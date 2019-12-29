@@ -1,4 +1,5 @@
 from app import *
+from app.controller import *
 from flask import render_template, session, jsonify, request, json
 
 
@@ -9,20 +10,26 @@ def render_test():
 
 @app.route('/testajaxxx', endpoint='test_ajax', methods=['GET', 'POST'])
 def test_ajax():
-    a = {
-        "topic" : [{
-                "name" : "Arts and Humanities",
-                "link" : "login.html"
-            },
-            {
-                "name":"ủeuqgoqwufq",
-                "link":"login.html"
-            }
-        ]
+    topics = get_topic()
+    
+    result = {
+        "topic" : []
     }
-    return jsonify(a)
+    for tp in topics :
+        result["topic"].append({
+            "name" : tp.topic_name,
+            "link" : "/testajaxxx/" + str(tp.id)
+        })
+    return jsonify(result)
 
-@app.route('/testajaxxx/<int:id>', endpoint='render_testxxx', methods=['GET', 'POST'])
-def render_testxxx(id):
-    id = 1
+@app.route('/testajaxxx/<int:post_id>', endpoint='render_testxxx', methods=['GET', 'POST'])
+def render_testxxx(post_id):
+    print (post_id == 1)
+    if post_id == 1:
+        return render_template("block_home.html")
     return render_template("login.html")
+
+# @app.route('/Learning/<int:id>', endpoint='render_learning', methods=['GET', 'POST'])
+# def render_learning(id):
+#     id = 1
+#     return render_template("login.html")

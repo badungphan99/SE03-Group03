@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, make_response, request
+from flask import render_template, session, jsonify, request, json
 import json
 from app.controller import *
 
@@ -18,13 +19,25 @@ def render_topic():
     topic = get_topic()
     return render_template('block_topic.html')
 
-@app.route("/testajax", methods=['POST'])
-def ajaxtest():
-    topic = ["Business", "Computer Science", "Data Science", "Information Technology", "Social Sciences"]
-    data = request.form
-    resp = make_response(json.dumps(data))
-    resp.status_code = 200
-    return resp
+@app.route('/learning', endpoint='learning', methods=['GET', 'POST'])
+def learning():
+    topics = get_topic()
+    
+    result = {
+        "topic" : []
+    }
+    for tp in topics :
+        result["topic"].append({
+            "name" : tp.topic_name,
+            "link" : "/Learning/" + str(tp.id)
+        })
+    return jsonify(result)
+
+@app.route('/Learning/<int:id>', endpoint='render_learning', methods=['GET', 'POST'])
+def render_learning(id):
+    courses = get_list_course_by_topic_id(id)
+    print ("len courses " , len(courses))
+    return render_template("login.html")
 
 @app.route("/testajax.html")
 def ajaxtest1():
