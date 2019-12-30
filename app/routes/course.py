@@ -19,19 +19,8 @@ def render_topic():
     topic = get_topic()
     return render_template('block_topic.html')
 
-@app.route('/learning', endpoint='learning', methods=['GET', 'POST'])
-def learning():
-    topics = get_topic()
+# @app.route('/learning', endpoint='learning', methods=['GET', 'POST'])
 
-    result = {
-        "topic" : []
-    }
-    for tp in topics :
-        result["topic"].append({
-            "name" : tp.topic_name,
-            "link" : "/Learning/" + str(tp.id)
-        })
-    return jsonify(result)
 
 @app.route('/Learning/<int:id>', endpoint='render_learning', methods=['GET', 'POST'])
 def render_learning(id):
