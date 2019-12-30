@@ -2,6 +2,8 @@ from app import app
 from flask import render_template
 from flask import render_template, session, jsonify, request, json
 
+from app.controller import *
+
 def learning():
     topics = get_topic()
 
@@ -13,7 +15,7 @@ def learning():
             "name" : tp.topic_name,
             "link" : "/Learning/" + str(tp.id)
         })
-    return jsonify(result)
+    return result, len(topics)
 
 @app.route('/', endpoint='render_root')
 def render_root():
@@ -21,6 +23,6 @@ def render_root():
 
 @app.route('/block_home.html', endpoint='render_home')
 def render_home():
-    topic = learning()
-    length = len(topic)
-    return render_template('block_home.html', topic, length)
+    topic, length = learning()
+    
+    return render_template('block_home.html', topic= topic, len=length)

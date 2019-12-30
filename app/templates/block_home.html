@@ -31,8 +31,9 @@
                          Learning
                         </button>
                         <div class="dropdown-menu">
-                            {% for i in range(0, length)%}
-                            <a class="dropdown-item" href="{% topic[i]['link'] %}"
+                            {% for i in range(0, len)%}
+                                <a class="dropdown-item" href="{{ topic['topic'][i]['link']}}" > {{topic['topic'][i]['name']}}</a>
+                            {% endfor %}
                         </div>
                       </div>
                 </div>
