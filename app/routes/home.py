@@ -24,5 +24,6 @@ def render_root():
 @app.route('/block_home.html', endpoint='render_home')
 def render_home():
     topic, length = learning()
-    
+    courses = get_list_course_by_topic_id(1)
+    print (courses)
     return render_template('block_home.html', topic= topic, len=length)
