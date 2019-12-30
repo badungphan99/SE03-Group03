@@ -24,6 +24,20 @@ def render_root():
 @app.route('/block_home.html', endpoint='render_home')
 def render_home():
     topic, length = learning()
-    courses = get_list_course_by_topic_id(1)
-    print (courses)
-    return render_template('block_home.html', topic= topic, len=length)
+    courses = get_course()
+
+    course = {
+        "course" : []
+    }
+    for cs in courses:
+        tc = get_techercourse_of_courseID(cs.id)
+        course['course'].append({
+            "id" : cs.id,
+            "title" : cs.title,
+            "topic_id" : cs.topic_id,
+            "description" : cs.description,
+            "create_date" : cs.create_date,
+            "duration" : cs.duration,
+            "techer_course" : tc
+        })
+    return render_template('block_home.html', topic= topic, len=length, course=course)

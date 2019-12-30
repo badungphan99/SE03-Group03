@@ -17,6 +17,22 @@ def render_learncourse():
 @app.route('/block_topic.html', endpoint='render_topic')
 def render_topic():
     topic = get_topic()
+    courses = get_course()
+    course = {
+        "course" : [
+        ]
+    }
+    for cs in courses:
+        tc = get_techercourse_of_courseID(cs.id)
+        course['course'].append({
+            "id" : cs.id,
+            "title" : cs.title,
+            "topic_id" : cs.topic_id,
+            "description" : cs.description,
+            "create_date" : cs.create_date,
+            "duration" : cs.duration,
+            "techer_course" : tc
+        })
     return render_template('block_topic.html')
 
 # @app.route('/learning', endpoint='learning', methods=['GET', 'POST'])
@@ -26,6 +42,11 @@ def render_topic():
 def render_learning(id):
     courses = get_list_course_by_topic_id(id)
     print ("len courses " , len(courses))
+    return render_template("login.html")
+
+@app.route('/test/<string:vari>', endpoint="testvar", methods=['GET', 'POST'])
+def testvar(vari):
+    print (vari)
     return render_template("login.html")
 
 @app.route("/testajax.html")
