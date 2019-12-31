@@ -165,51 +165,51 @@
                     <h3>Top courses</h3>
                 </div>
                 <div class="col-md-3 cousera-item">
-                    <a href="">
+                    <a href="{{course['course'][0]['link']}}">
                         <img src="../static/images/vd.jpg" class="img-item" alt="">
                     </a>
-                    <a href="">
+                    <a href="{{course['course'][0]['link']}}">
                         <h4 class="cousera-name">{{course['course'][0]['title']}}</h4>
                     </a>
                     <div class="cousera-info">
                         <div class="teacher-name">
-                            Teacher:<span>{{course['course'][2]['tc']}}</span>
+                            Teacher:<span>{{course['course'][0]['techer_course']}}</span>
                         </div>
 
                         <div class="more">
-                            <button class="btn btn-secondary btn-more">See more</button>
+                            <a href="{{course['course'][0]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 cousera-item">
-                    <a href="">
+                    <a href="{{course['course'][1]['link']}}">
                         <img src="../static/images/vd.jpg" class="img-item" alt="">
                     </a>
-                    <a href="">
+                    <a href="{{course['course'][1]['link']}}">
                         <h4 class="cousera-name">{{course['course'][1]['title']}}</h4>
                     </a>
                     <div class="cousera-info">
                         <div class="teacher-name">
-                            Teacher:<span>{{course['course'][1]['tc']}}</span>
+                            Teacher:<span>{{course['course'][1]['techer_course']}}</span>
                         </div>
                         <div class="more">
-                            <button class="btn btn-secondary btn-more">See more</button>
+                            <a href="{{course['course'][1]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 cousera-item">
-                    <a href="">
+                    <a href="{{course['course'][2]['link']}}">
                         <img src="../static/images/vd.jpg" class="img-item" alt="">
                     </a>
-                    <a href="">
+                    <a href="{{course['course'][2]['link']}}">
                         <h4 class="cousera-name">{{course['course'][2]['title']}}</h4>
                     </a>
                     <div class="cousera-info">
                         <div class="teacher-name">
-                            Teacher:<span>{{course['course'][2]['tc']}}</span>
+                            Teacher:<span>{{course['course'][2]['techer_course']}}</span>
                         </div>
                         <div class="more">
-                            <button class="btn btn-secondary btn-more">See more</button>
+                            <a href="{{course['course'][1]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
                         </div>
                     </div>
                 </div>

@@ -4,19 +4,6 @@ from flask import render_template, session, jsonify, request, json
 
 from app.controller import *
 
-def learning():
-    topics = get_topic()
-
-    result = {
-        "topic" : []
-    }
-    for tp in topics :
-        result["topic"].append({
-            "name" : tp.topic_name,
-            "link" : "/Learning/" + str(tp.id)
-        })
-    return result, len(topics)
-
 @app.route('/', endpoint='render_root')
 def render_root():
     return render_template('block_home.html')
@@ -29,8 +16,13 @@ def render_home():
     course = {
         "course" : []
     }
+    
     for cs in courses:
-        tc = get_techercourse_of_courseID(cs.id)
+        tcs = get_techercourse_of_courseID(cs.id)
+        tc = ""
+        # print (tcs)
+        for name in tcs:
+            tc = tc + str(name)[2:-3] + ","
         course['course'].append({
             "id" : cs.id,
             "title" : cs.title,
@@ -38,6 +30,7 @@ def render_home():
             "description" : cs.description,
             "create_date" : cs.create_date,
             "duration" : cs.duration,
-            "techer_course" : tc
+            "techer_course" : tc[:-1],
+            "link" : "/course/" + str(cs.id)
         })
     return render_template('block_home.html', topic= topic, len=length, course=course)

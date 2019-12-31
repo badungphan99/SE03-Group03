@@ -16,7 +16,7 @@ def render_learncourse():
 
 @app.route('/block_topic.html', endpoint='render_topic')
 def render_topic():
-    topic = get_topic()
+    topic, length = learning()
     courses = get_course()
     course = {
         "course" : [
@@ -33,21 +33,43 @@ def render_topic():
             "duration" : cs.duration,
             "techer_course" : tc
         })
-    return render_template('block_topic.html')
-
-# @app.route('/learning', endpoint='learning', methods=['GET', 'POST'])
-
+    return render_template('block_topic.html', topic= topic, len=length, course=course)
 
 @app.route('/Learning/<int:id>', endpoint='render_learning', methods=['GET', 'POST'])
 def render_learning(id):
+    topic, length = learning()
     courses = get_list_course_by_topic_id(id)
-    print ("len courses " , len(courses))
-    return render_template("login.html")
+    
+    course = {
+        "course" : [
+        ]
+    }
+    lencourses = len(courses)
+    for cs in courses:
+        tcs = get_techercourse_of_courseID(cs.id)
+        tc = ""
+        # print (tcs)
+        for name in tcs:
+            tc = tc + str(name)[2:-3] + ","
+        course['course'].append({
+            "id" : cs.id,
+            "title" : cs.title,
+            "topic_id" : cs.topic_id,
+            "description" : cs.description,
+            "create_date" : cs.create_date,
+            "duration" : cs.duration,
+            "techer_course" : tc[:-1],
+            "link" : "/course/" + str(cs.id)
+        })
+    
+    return render_template('block_topic.html', topic= topic, len=length, course=course, lencourses=lencourses)
 
-@app.route('/test/<string:vari>', endpoint="testvar", methods=['GET', 'POST'])
-def testvar(vari):
-    print (vari)
-    return render_template("login.html")
+
+@app.route('/course/<string:courseID>', endpoint="testvar", methods=['GET', 'POST'])
+def testvar(courseID):
+    print (courseID)
+    return render_template("block_learncourse.html")
+
 
 @app.route("/testajax.html")
 def ajaxtest1():
