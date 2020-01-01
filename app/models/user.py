@@ -21,6 +21,8 @@ class User(db.Model, UserMixin):
     students = db.relationship('StudentCourse', backref='user', lazy='dynamic')
     file_uploads = db.relationship('FileUpload', backref='user', lazy='dynamic')
 
+    courses = db.relationship('TeacherCourse', back_populates='user')
+
     def __init__(self, username, password, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
         self.username = username
         self.password = password

@@ -3,7 +3,7 @@ import time
 from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 from app import *
-from dotenv import load_dotenv
+from dotenv import load_dotenv,set_key
 from app.models import *
 from app.routes import *
 
@@ -26,6 +26,11 @@ def migrate():
     time.sleep(15)
     db.create_all()
     db.session.commit()
+    topic = ["Business", "Computer Science", "Data Science", "Information Technology", "Social Sciences"]
+    for tp in topic:
+        t = Topic(tp)
+        db.session.add(t)
+        db.session.commit()
 
 @manager.command
 def build():

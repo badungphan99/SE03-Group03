@@ -1,18 +1,18 @@
 version: "3"
 
 services:
-  web:
-    build: .
-    ports:
-      - '80:80'
-    volumes:
-      - ./data/WebData/Course_Document:/app/WebData/Course_Document
-      - ./data/WebData/Course_img:/app/WebData/Course_img
-      - .:/app
+#  web:
+#    build: .
+#    ports:
+#      - '80:80'
+#    volumes:
+#      - ./data/WebData/Course_Document:/app/WebData/Course_Document
+#      - ./data/WebData/Course_img:/app/WebData/Course_img
+#      - .:/app
   db:
     depends_on:
       - phpmyadmin
-      - web
+#      - web
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: unless-stopped

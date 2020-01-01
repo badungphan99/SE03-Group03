@@ -239,6 +239,9 @@ a:hover{
     margin-bottom: 20px;
     margin-right: 20px;
 }
+.cousera-info .more .btn-secondary a{
+    color: white;
+}
 .btn-secondary{
     background-color: #2A73CC;
 }

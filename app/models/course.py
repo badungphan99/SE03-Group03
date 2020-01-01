@@ -15,6 +15,8 @@ class Course(db.Model):
     # relationship one to one
     forum = db.relationship('Forum', uselist=False, backref='course')
 
+    users = db.relationship('TeacherCourse', back_populates='course')
+
     def __init__(self, title, description, duration):
         self.title = title
         self.description = description
@@ -51,9 +53,8 @@ class TeacherCourse(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
     course_id = db.Column(db.Integer, db.ForeignKey('course.id'), primary_key=True)
 
-    def __init__(self, user_id, course_id):
-        self.user_id = user_id
-        self.course_id = course_id
+    user = db.relationship('User', back_populates="courses")
+    course = db.relationship('Course', back_populates="users")
 
 
 class Section(db.Model):
