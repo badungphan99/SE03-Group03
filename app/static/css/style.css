@@ -573,6 +573,9 @@ a:hover{
     padding-bottom: 20px;
     color: #fff;
 }
+.learn-body{
+    margin-top: 20px;
+}
 .learn-body-left,.learn-body-right{
     float: left;
 }
@@ -752,6 +755,7 @@ a:hover{
 .learn-body-right{
     width: 280px;
     float: left;
+    margin: auto;
     min-height: 300px;
     margin-top: 20px;
 }
@@ -802,21 +806,21 @@ a:hover{
     margin-top: -20px;
 }
 .main-nav >h3{
-    background: #2A73CC;
+    background: #e8e1e1;
     padding: 10px;
-    color: white;
+    color: black;    
     font-size: 20px;
     text-align: center
 }
 .main-nav-ul{
-    background: #2A73CC
+    background:#e8e1e1;
 }
 .main-nav >ul>li>a{
     /* font-size: 13px; */
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px 0 10px 20px;
-    color: white;
+    color: black;
     border-bottom: 1px solid white;
 }
 .main-nav-ul > li>a:hover{
@@ -830,7 +834,7 @@ a:hover{
     margin-right: 10px;
 }
 .list-lesson{
-    padding: 0 30px;
+    /* padding: 0 30px; */
 }
 
 #more-comment{
@@ -1279,3 +1283,6 @@ textarea.form-control {
 .right-r{
     float: right;
 }
+
+
+/* admin style */
