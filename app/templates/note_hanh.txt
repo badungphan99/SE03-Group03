@@ -26,3 +26,251 @@
 </div>
 
 //tao bai hoc , k phai khoa hoc
+
+
+
+//trang learncourse
+ <div id="body" class="body">
+        <div class="container-fluid">
+            <div class="row learn-head">
+                <div class="col-md-5 learn-head-left">
+                    <div class="learn-caption">
+                        <div class="col-md-12">
+                           <h5>Technology</h5>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="star-rating">
+                                <span class="fa fa-star-o" data-rating="1"></span>
+                                <span class="fa fa-star-o" data-rating="2"></span>
+                                <span class="fa fa-star-o" data-rating="3"></span>
+                                <span class="fa fa-star-o" data-rating="4"></span>
+                                <span class="fa fa-star-o" data-rating="5"></span>
+                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="btn-enroll">
+                            <button target="_blank" class="enroll">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="offer-by">
+                       <span>Offer by</span>
+                       <h5>Stanford</h5>
+                       <p style="font-style: italic;font-family: 'Times New Roman', Times, serif;">Welcome to our course, where you will learn extremely
+                        useful knowledge in a comprehensive way from theory to practice. 
+                        Quality always goes with our work.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row learn-body">
+                <div class="col-md-8 learn-body-left">
+                    <div class="video-course">
+                        <iframe gesture="media" allow="encrypted-media" allowfullscreen="" src="https://www.youtube.com/embed/v4g2g6fP6tU?rel=0" frameborder="0"></iframe>
+                    </div>
+                    <div class="comment-container" class="comment-container">
+                        <ul class="nav nav-pills comment-tab">
+                            <li class="li-tab user-tab active">
+                                <a data-toggle="pill" href="#user-comment-content">Ý kiến học viên</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="user-comment-content" class="tab-pane fade active in">
+                                <div class="list-comments">
+                                    <div class="input-comment-container">
+                                        <p>
+                                            <b>post comment</b>
+                                        </p>
+                                        <div class="form_action">
+                                            <img src="https://dungmori.com/cdn/avatar/small/1566741552_1265300775_43e105_72d6c8.jpeg" class="me-avatar"> 
+                                            <div style="position: relative;">
+                                                <textarea data-emoji-picker="true" id="comment-content" rows="1" placeholder="comment..." class="input-comment" style="overflow: hidden; overflow-wrap: break-word; resize: horizontal; height: 42px; width: 100%;"></textarea>
+                                            </div>
+                                            <button class="post-comment-btn">Đăng</button>
+                                        </div>
+                                    </div>
+
+                                    <ul>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <ul id="more-comment">
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                        <li id="" class="comment-item">
+                                            <a data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="pull-left avatar-container"><!----> 
+                                                <img src="https://dungmori.com/cdn/avatar/small/1571230612_1481288895_731400_96cc34" class="avatar">
+                                            </a>
+                                            <div class="comment-content">
+                                                    <p class="name">
+                                                        <b data-fancybox="" data-src="#user-profile-popup" href="javascript:;" class="red">
+                                                            Trà My
+                                                        </b> 
+                                                        <span>
+                                                            em chào thầy/cô , em mới bắt đầu học ve machinlearning, thay co co the giup em duoc khong a
+                                                        </span>                                                      
+                                                    </p>
+                                                    <p class="comment-action">
+                                                        <a data-toggle="collapse" id="answer-reply-102570" href="#reply-102570" aria-expanded="false" aria-controls="reply-102570" class="answer">Trả lời</a> • 
+                                                        <span id="time_block" class="time"></span>
+                                                    </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="more-comment" id="show">
+                                        <button class="btn btn-primary btn-more-comment" id="show">
+                                            More comment
+                                            <img src="https://dungmori.com/assets/img/loading.gif" class="loading-icon">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 learn-body-right">
+                    <div class="intro">
+                        <div class="buy-item">
+                            <a href="#">
+                                <div class="btn-buy">Buy this Course</div>
+                            </a>
+                        </div>
+                        <div class="">
+                                <a href="block_course.html">
+                                    <div class="see-more-courses">See more courses 
+                                        <i class="fa fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                        </div>
+                    </div>
+                    <div class="list-lesson">
+                        <nav class="main-nav">
+                            <h3>ALL LESSON</h3>
+                            <ul class="main-nav-ul">
+                                <li><a href="#">Lesson1: Introduce</a></li>
+                                <li><a href="#">Lesson2: Introduce</a></li>
+                                <li><a href="#">Lesson3: Introduce</a></li>
+                                <li><a href="#">Lesson4: Introduce</a></li>
+                                <li><a href="#">Lesson5: Introduce</a></li>
+
+                                <li><a href="#">Lesson6: Introduce</a></li>
+                                <li><a href="#">Lesson7: Introduce</a></li>
+                                <li><a href="#">Lesson8: Introduce</a></li>
+                                <li><a href="#">Lesson9: Introduce</a></li>
+                                <li><a href="#">Lesson10: Introduce</a></li>
+
+                                <li><a href="#">Lesson11: Introduce</a></li>
+                                <li><a href="#">Lesson12: Introduce</a></li>
+                                <li><a href="#">Lesson13: Introduce</a></li>
+                                <li><a href="#">Lesson14: Introduce</a></li>
+                                <li><a href="#">Lesson15: Introduce</a></li>
+
+                            </ul>
+        
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+    
+    </div>
