@@ -29,7 +29,13 @@ def render_testxxx(post_id):
         return render_template("block_home.html")
     return render_template("login.html")
 
-# @app.route('/Learning/<int:id>', endpoint='render_learning', methods=['GET', 'POST'])
-# def render_learning(id):
-#     id = 1
-#     return render_template("login.html")
+@app.route('/admin', endpoint='render_test_admin', methods=['GET', 'POST'])
+def render_test_admin():
+    topic, length = learning()
+    return render_template("admin-home.html", topic= topic, len=length)
+
+
+@app.route('/teacher_addcourse_item', endpoint='render_test_teacher_addcourse_item', methods=['GET', 'POST'])
+def render_test_teacher_addcourse_item():
+    topic, length = learning()
+    return render_template("teacher_addcourse_item.html", topic= topic, len=length)

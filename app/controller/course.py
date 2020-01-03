@@ -18,6 +18,10 @@ def get_topic():
     topic = Topic.query.all()
     return topic
 
+def get_course_by_courseID(courseId):
+    courses = db.session.query(Course).filter(Course.id == courseId).first()
+    return courses
+
 def get_course():
     return Course.query.all()
 

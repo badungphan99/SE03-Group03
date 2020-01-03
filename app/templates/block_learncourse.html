@@ -29,12 +29,9 @@
                         Learning
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Arts and Humanities</a>
-                          <a class="dropdown-item" href="#">Business</a>
-                          <a class="dropdown-item" href="#">Computer Science</a>
-                          <a class="dropdown-item" href="#">Data Science</a>
-                          <a class="dropdown-item" href="#">Information Technology</a>
-                          <a class="dropdown-item" href="#">Social Sciences</a>
+                            {% for i in range(0, len)%}
+                                <a class="dropdown-item" href="{{ topic['topic'][i]['link']}}" > {{topic['topic'][i]['name']}}</a>
+                            {% endfor %}
                         </div>
                       </div>
                 </div>
@@ -78,7 +75,7 @@
                 <div class="col-md-5 learn-head-left">
                     <div class="learn-caption">
                         <div class="col-md-12">
-                           <h5>Technology</h5>
+                           <h5>{{course['title']}}</h5>
                         </div>
                         <div class="col-lg-12">
                             <div class="star-rating">
@@ -117,24 +114,9 @@
                         <nav class="main-nav">
                             <h3>ALL LESSON</h3>
                             <ul class="main-nav-ul">
-                                <li><a href="#">Lesson1: Introduce</a></li>
-                                <li><a href="#">Lesson2: Introduce</a></li>
-                                <li><a href="#">Lesson3: Introduce</a></li>
-                                <li><a href="#">Lesson4: Introduce</a></li>
-                                <li><a href="#">Lesson5: Introduce</a></li>
-
-                                <li><a href="#">Lesson6: Introduce</a></li>
-                                <li><a href="#">Lesson7: Introduce</a></li>
-                                <li><a href="#">Lesson8: Introduce</a></li>
-                                <li><a href="#">Lesson9: Introduce</a></li>
-                                <li><a href="#">Lesson10: Introduce</a></li>
-
-                                <li><a href="#">Lesson11: Introduce</a></li>
-                                <li><a href="#">Lesson12: Introduce</a></li>
-                                <li><a href="#">Lesson13: Introduce</a></li>
-                                <li><a href="#">Lesson14: Introduce</a></li>
-                                <li><a href="#">Lesson15: Introduce</a></li>
-
+                                {% for i in range(0, lenlesson) %}
+                                    <li><a href="{{ lesson['lesson'][i]['link']}}"> {{lesson['lesson'][i]['name']}}</a>
+                                {% endfor %}
                             </ul>
         
                         </nav>

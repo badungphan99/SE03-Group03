@@ -11,8 +11,10 @@ def render_course():
 
 @app.route('/block_learncourse.html', endpoint='render_learncourse')
 def render_learncourse():
-    topic = get_topic()
-    return render_template('block_learncourse.html')
+    topic, length = learning()
+    courses = get_course()
+
+    return render_template('block_learncourse.html', topic= topic, len=length)
 
 @app.route('/block_topic.html', endpoint='render_topic')
 def render_topic():
@@ -67,8 +69,24 @@ def render_learning(id):
 
 @app.route('/course/<string:courseID>', endpoint="testvar", methods=['GET', 'POST'])
 def testvar(courseID):
-    print (courseID)
-    return render_template("block_learncourse.html")
+    topic, length = learning()
+    course = get_course_by_courseID(courseID)
+
+    lesson = {
+        "lesson" : [
+            {
+                "name" : "Lesson 1 : back to home",
+                "link" : "/"
+            }
+        ]
+    }
+
+    course_js = {
+        "title" : course.title
+    }
+
+    lenlesson = 1
+    return render_template('block_learncourse.html', topic= topic, len=length, lesson=lesson, lenlesson=lenlesson, course=course_js)
 
 
 @app.route("/testajax.html")
