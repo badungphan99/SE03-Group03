@@ -6,8 +6,32 @@ from app.controller import *
 
 @app.route('/block_course.html', endpoint='render_course')
 def render_course():
-    topic = get_topic()
-    return render_template('block_course.html')
+    # print(current_user.id)
+    topic, length = learning()
+    courses = get_course()
+    course = {
+        "course" : [
+        ]
+    }
+    lencourses = len(courses)
+    for cs in courses:
+        tcs = get_techercourse_of_courseID(cs.id)
+        tc = ""
+        # print (tcs)
+        for name in tcs:
+            tc = tc + str(name)[2:-3] + ","
+        course['course'].append({
+            "id" : cs.id,
+            "title" : cs.title,
+            "topic_id" : cs.topic_id,
+            "description" : cs.description,
+            "create_date" : cs.create_date,
+            "duration" : cs.duration,
+            "techer_course" : tc[:-1],
+            "link" : "/course/" + str(cs.id)
+        })
+    
+    return render_template('block_course.html', topic= topic, len=length, course=course, lencourses=lencourses)
 
 @app.route('/block_learncourse.html', endpoint='render_learncourse')
 def render_learncourse():
