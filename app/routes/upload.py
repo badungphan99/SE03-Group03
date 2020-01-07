@@ -1,7 +1,7 @@
 import os
 from app import app
 from app.controller import *
-from flask import render_template, request, flash, redirect
+from flask import render_template, request, flash, redirect, send_from_directory, send_file
 from werkzeug.utils import secure_filename
 import urllib.request
 from dotenv import load_dotenv
@@ -41,7 +41,7 @@ def upload_file():
 			#untested
 			insert_file_to_db(filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, "", "")
 
-			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			file.save(os.path.join(app.config['UPLOAD_FOLDER'], dt_string + "." + filename))
 			flash('File successfully uploaded')
 			return redirect('/')
 		else:

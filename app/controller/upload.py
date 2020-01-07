@@ -14,6 +14,7 @@ def insert_file_type(_type):
 
 def insert_file_to_db(fileName, pathInServer, fileLocation, file_type):
     fileUpload = FileUpload(fileName, pathInServer)
+    # fileUpload.user_id = user_id
     file_location = FileLocation(fileLocation)
     file_location.file_uploads.append(fileUpload)
     db.session.add(fileUpload)

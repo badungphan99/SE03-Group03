@@ -75,8 +75,8 @@ def testvar(courseID):
     lesson = {
         "lesson" : [
             {
-                "name" : "Lesson 1 : back to home",
-                "link" : "/"
+                "name" : "Lesson 1 : do some thing",
+                "link" : "/download_lesson/" + "lesson1"
             }
         ]
     }
