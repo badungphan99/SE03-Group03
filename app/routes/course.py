@@ -6,7 +6,6 @@ from app.controller import *
 
 @app.route('/block_course.html', endpoint='render_course')
 def render_course():
-    # print(current_user.id)
     topic, length = learning()
     courses = get_course()
     course = {
@@ -30,7 +29,6 @@ def render_course():
             "techer_course" : tc[:-1],
             "link" : "/course/" + str(cs.id)
         })
-    
     return render_template('block_course.html', topic= topic, len=length, course=course, lencourses=lencourses)
 
 @app.route('/block_learncourse.html', endpoint='render_learncourse')
@@ -65,7 +63,6 @@ def render_topic():
 def render_learning(id):
     topic, length = learning()
     courses = get_list_course_by_topic_id(id)
-    
     course = {
         "course" : [
         ]
@@ -87,8 +84,11 @@ def render_learning(id):
             "techer_course" : tc[:-1],
             "link" : "/course/" + str(cs.id)
         })
-    
-    return render_template('block_topic.html', topic= topic, len=length, course=course, lencourses=lencourses)
+    varLogin="/login.html";
+    varSignUp = "/register.html";
+    myCourse = "/block_mycourse.html"
+    varLogout = "/logout"
+    return render_template('block_topic.html', topic= topic, len=length, course=course, lencourses=lencourses, varLogin=varLogin, varSignUp=varSignUp, myCourse=myCourse, varLogout=varLogout)
 
 
 @app.route('/course/<string:courseID>', endpoint="testvar", methods=['GET', 'POST'])
@@ -112,6 +112,9 @@ def testvar(courseID):
     lenlesson = 1
     return render_template('block_learncourse.html', topic= topic, len=length, lesson=lesson, lenlesson=lenlesson, course=course_js)
 
+@app.route("/block_mycourse.html")
+def viewCourse():
+    return render_template('block_mycourse.html')
 
 @app.route("/testajax.html")
 def ajaxtest1():
