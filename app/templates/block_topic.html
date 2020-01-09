@@ -51,20 +51,23 @@
             <button type="button" class="btn btn-primary btn-login" id="btn-login"><a href="login.html">Login</a></button>
             <button type="button" class="btn btn-link btn-signup" id="btn-signup"><a href="register.html">Sign up</a></button>
         </div> -->
+
         <div class="col-sm-6 col-md-4 ">
             <div class="col-md-6 col-sm-12 account-header">
                 <div class="dropdown">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="block_mycourse.html">My courses</a>
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="#">Setting</a>
-                        <a class="dropdown-item" href="#">Help Center</a>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </div>
-                    </div>
+                    {% if current_user.is_authenticated %}
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Setting</a>
+                            <a class="dropdown-item" href="#">Help Center</a>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                        </div>
+                    {% endif %}
             </div>
         </div>
     </div>

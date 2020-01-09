@@ -53,16 +53,18 @@
             <div class="col-sm-6 col-md-4 ">
                 <div class="col-md-6 col-sm-12 account-header">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="block_mycourse.html">My courses</a>
-                          <a class="dropdown-item" href="#">Profile</a>
-                          <a class="dropdown-item" href="#">Setting</a>
-                          <a class="dropdown-item" href="#">Help Center</a>
-                          <a class="dropdown-item" href="#">Logout</a>
-                        </div>
+                        {% if current_user.is_authenticated %}
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                              <a class="dropdown-item" href="#">Profile</a>
+                              <a class="dropdown-item" href="#">Setting</a>
+                              <a class="dropdown-item" href="#">Help Center</a>
+                              <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        {% endif %}
                       </div>
                 </div>
             </div>
@@ -90,7 +92,11 @@
                     </div>
                     <div class="">
                         <div class="btn-enroll">
-                            <button target="_blank" class="enroll">Enroll</button>
+                            {% if current_user.is_authenticated %}
+                                <button target="_blank" class="enroll">Enroll</button>
+                            {% else %}
+                                <button target="_blank" class="enroll">You must login to enroll this course</button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
