@@ -87,30 +87,28 @@
                 </div>
             </div>
 
-            <div class="row mycourse-list" style="margin-top: 0;">
+             <div class="row mycourse-list">
                 <ul>
-                    <li class="col-md-3 cousera-item">
-                        <a href="">
-                            <img src="../static/images/vd.jpg" class="img-item" alt="">
-                        </a>
-                        <a href="">
-                            <h4 class="cousera-name">Technology</h4>
-                        </a>
-                        <div class="cousera-info">
-                            <div class="teacher-name">
-                                Teacher:<span>Mr.David</span>
+                    {%for i in range(0, lencourses)%}
+                        <li class="col-md-3 cousera-item">
+                            <a href="{{course['course'][i]['link']}}">
+                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                            </a>
+                            <a href="{{course['course'][i]['link']}}">
+                                <h4 class="cousera-name" style="font-size: 20px;">{{course['course'][i]['title']}}</h4>
+                            </a>
+                            <div class="cousera-info">
+                                <div class="teacher-name">
+                                    Teacher:<span style="font-size: 12px;">{{course['course'][i]['techer_course']}}</span>
+                                </div>
+                                <div class="more">
+                                    <a href="{{course['course'][i]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
+                                </div>
                             </div>
-                            <div class="price">
-                                Price:<span> Free</span>
-                            </div>
-                            <div class="more">
-                                <button class="btn btn-continue btn-more">Delete</button>
-                                <button class="btn btn-change btn-more">Change</button>
-                            </div>
-                        </div>
-                    </li>
-                    
+                        </li>
+                    {% endfor %}
                 </ul>
+
             </div>
 
             <div class="row banner-ads">

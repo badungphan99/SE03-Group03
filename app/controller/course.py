@@ -56,3 +56,7 @@ def create_section(course_id, title, content):
 def get_lesson_by_course_id(course_id):
     lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id)
     return lessons
+
+def get_all_teacher_course_by_user_id(userID):
+    courses = db.session.query(Course).join(TeacherCourse).filter(TeacherCourse.user_id == userID).all()
+    return courses
