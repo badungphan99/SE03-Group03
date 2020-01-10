@@ -19,11 +19,5 @@ def insert_course():
     _topic = request.form.get('topicvalue')
     _des = request.form.get('descourse')
     _duration = request.form.get('thoiluong')
-    course = Course(_name_course, _des, _duration)
-
-    topic = db.session.query(Topic).filter(Topic.id == _topic).first()
-    if topic:
-        topic.coursers.append(course)
-    db.session.add(course)
-    db.session.commit()
-    return render_template('teacher_addcourse_listitem.html')
+    insert_teacher_course(_name_course, _des, _duration, _topic)
+    return redirect('/teacher_home')
