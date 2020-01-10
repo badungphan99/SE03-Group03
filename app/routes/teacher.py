@@ -66,6 +66,7 @@ def insert_course():
 
 @app.route('/change-course/<string:courseID>', endpoint="change_course", methods=['GET', 'POST'])
 def change_course(courseID):
+    print(courseID)
     # topic, length = learning()
     # course = get_course_by_courseID(courseID)
     lessons = get_lesson_by_course_id(courseID)
@@ -105,14 +106,14 @@ def render_change_lesson(lessonID, courseID):
         print (lessonID)
         namelesson = request.form.get('DisplayName')
         contentlesson = request.form.get('content-lesson')
-
-        return change_course(courseID)
+        update_section(lessonID, namelesson, contentlesson)
+        return redirect('/change-course/' + str(courseID))
     lesson = {
         "title" : ls.title,
         "content" : ls.content
     }
     print (ls.content)
-    return render_template("teacher_change_lesson.html", lesson=lesson)
+    return render_template("teacher_change_lesson.html", lesson=lesson, courseID=courseID, lessonID=lessonID)
 
 @app.route("/del-lesson/<string:courseID>/<string:lessonID>", endpoint="render_del_lesson", methods=['GET', 'POST'])
 def render_del_lesson(lessonID, courseID):

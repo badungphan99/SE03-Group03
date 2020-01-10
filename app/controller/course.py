@@ -68,7 +68,7 @@ def update_section(section_id, title, content):
     db.session.commit()
 
 def get_lesson_by_course_id(course_id):
-    lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id).all()
+    lessons = db.session.query(Section).filter(Section.course_id == course_id).order_by(Section.id).all()
     return lessons
 
 def get_all_teacher_course_by_user_id(userID):

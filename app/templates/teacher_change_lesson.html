@@ -60,7 +60,7 @@
                             <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="teacher_home">My courses</a>
+                          <a class="dropdown-item" href="/teacher_home">My courses</a>
                           <a class="dropdown-item" href="#">Profile</a>
                           <a class="dropdown-item" href="#">Setting</a>
                           <a class="dropdown-item" href="#">Help Center</a>
@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    <form action="/teacher_add_lession/{{courseID}}" method="POST">
+    <form action="/change-lesson/{{courseID}}/lesson={{lessonID}}" method="POST">
         <div class="body body-big" id="body">
             <div class="container mycourse">
                 <div class="row mycourse-title">
@@ -100,7 +100,7 @@
                         </div>
                         <div class="row form-group ">
                             <div class="col-md-6">
-                                    <a href="">Cancle</a>
+                                    <a href="">Cancel</a>
                             </div>
                             <div class="col-md-6"> 
                                 <button class="btn btn-primary" style="float: right">Save</button>
