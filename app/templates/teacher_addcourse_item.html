@@ -60,7 +60,7 @@
                             <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="teacher_home">My courses</a>
+                          <a class="dropdown-item" href="/teacher_home">My courses</a>
                           <a class="dropdown-item" href="#">Profile</a>
                           <a class="dropdown-item" href="#">Setting</a>
                           <a class="dropdown-item" href="#">Help Center</a>
@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    <form action="/teacher_add_lession/{{courseID}}" method="POST">
+    <form action="/teacher_add_lession/{{courseID}}" method="POST" enctype="multipart/form-data">
         <div class="body body-big" id="body">
             <div class="container mycourse">
                 <div class="row mycourse-title">
@@ -90,13 +90,13 @@
                             <label>Content lesson</label>
                             <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson"></textarea>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Img lesson</label>
                             <input type="file" class="" name="img-lesson" value="">
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label>File of lesson</label>
-                            <input type="file" class="" name="video-lesson" value="">
+                            <input type="file" class="" name="file" value="">
                         </div>
                         <div class="row form-group ">
                             <div class="col-md-6">

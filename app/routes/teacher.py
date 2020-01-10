@@ -96,6 +96,20 @@ def render_addlis(courseID):
         namelesson = request.form.get('DisplayName')
         contentlesson = request.form.get('content-lesson')
         create_section(courseID, namelesson, contentlesson)
+        ls = get_lesson_by_course_id(courseID)
+        if 'file' not in request.files:
+            flash('No file part')
+
+        file = request.files['file']
+        if file.filename == '':
+            flash('No file selected for uploading')
+        
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            now = datetime.now()
+            dt_string = now.strftime("%d.%m.%Y.%H.%M.%S.%f")
+            
+            insert_file_to_db(current_user.id, filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, ls[len(ls)-1].id)
         return redirect('/change-course/'+ str(courseID))
     return render_template("teacher_addcourse_item.html", courseID=courseID)
 
@@ -107,6 +121,20 @@ def render_change_lesson(lessonID, courseID):
         namelesson = request.form.get('DisplayName')
         contentlesson = request.form.get('content-lesson')
         update_section(lessonID, namelesson, contentlesson)
+        # ls = get_lesson_by_course_id(courseID)
+        if 'file' not in request.files:
+            flash('No file part')
+
+        file = request.files['file']
+        if file.filename == '':
+            flash('No file selected for uploading')
+        
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            now = datetime.now()
+            dt_string = now.strftime("%d.%m.%Y.%H.%M.%S.%f")
+            
+            insert_file_to_db(current_user.id, filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, lessonID)
         return redirect('/change-course/' + str(courseID))
     lesson = {
         "title" : ls.title,
