@@ -49,10 +49,14 @@ def check_input_register(username, password, retypepassword, fullname, email):
 
     return True
 
+def get_all_type_account():
+    all_type_account = TypeAccount.query.all()
+    return all_type_account
 
-def insert_new_user(type_user, username, passwd, fullname, email, birthday, highest_degree, university, major):
-    # type_account = TypeAccount(type_user)
+def insert_new_user(type_account_id, username, passwd, fullname, email, birthday, highest_degree, university, major):
+    typeAccount = db.session.query(TypeAccount).filter(TypeAccount.id == type_account_id).first()
     user = User(username, passwd, fullname, email)
-    # type_account.users.append(user)
+    typeAccount.users.append(user)
+
     db.session.add(user)
     db.session.commit()
