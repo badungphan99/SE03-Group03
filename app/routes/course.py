@@ -96,35 +96,42 @@ def render_learning(id):
 def testvar(courseID):
     topic, length = learning()
     course = get_course_by_courseID(courseID)
-
+    lessons = get_lesson_by_course_id(courseID)
+    print (lessons)
     lesson = {
         "lesson" : [
-            {
-                "name" : "Lesson 1 : do some thing",
-                "link" : "/download_lesson/" + "lesson1"
-            }
         ]
     }
-
+    for ls in lessons :
+        lesson['lesson'].append({
+            'title' : ls.title,
+            'content' : ls.content,
+            'link' : "/course/" + str(courseID) + '/lesson=' + str(ls.id)
+        })
     course_js = {
         "title" : course.title,
         "description" : course.description
     }
 
-    lenlesson = 1
+    lenlesson = len(lessons)
     return render_template('block_learncourse.html', topic= topic, len=length, lesson=lesson, lenlesson=lenlesson, course=course_js)
 
 @app.route("/block_mycourse.html")
 @login_required
 def viewCourse():
     topic, length = learning()
-    courses = get_course()
+    courses = get_all_student_course_by_user_id(current_user.id)
+    
     course = {
         "course" : [
         ]
     }
     for cs in courses:
-        tc = get_techercourse_of_courseID(cs.id)
+        tcs = get_techercourse_of_courseID(cs.id)
+        tc = ""
+        # print (tcs)
+        for name in tcs:
+            tc = tc + str(name)[2:-3] + ","
         course['course'].append({
             "id" : cs.id,
             "title" : cs.title,
@@ -132,12 +139,18 @@ def viewCourse():
             "description" : cs.description,
             "create_date" : cs.create_date,
             "duration" : cs.duration,
-            "techer_course" : tc
+            "techer_course" : tc[:-1],
+            "link" : "/course/" + str(cs.id)
         })
-    return render_template('block_mycourse.html', topic= topic, len=length, course=course)
+    return render_template('block_mycourse.html', topic= topic, len=length, course=course, lencourses=len(courses))
 
 @app.route('/course/<string:courseID>/lesson=<string:lessonID>', endpoint="render_lesson", methods=['GET', 'POST'])
 def render_lesson(courseID, lessonID):
     topic, length = learning()
-    lesson = get_lesson_by_ID(lessonID)
-    return render_template("block_course_item.html", topic=topic, len=length)
+    ls = get_lesson_by_ID(lessonID)
+    lesson = {
+        'title' : ls.title,
+        'content' : ls.content 
+    }
+    print(lesson)
+    return render_template("block_course_item.html", topic=topic, len=length, lesson=lesson)

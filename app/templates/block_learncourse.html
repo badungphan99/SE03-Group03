@@ -58,8 +58,8 @@
                                 <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="block_mycourse.html">My courses</a>
-                              <a class="dropdown-item" href="block_account.html">Profile</a>
+                              <a class="dropdown-item" href="/block_mycourse.html">My courses</a>
+                              <a class="dropdown-item" href="/block_account.html">Profile</a>
                               <a class="dropdown-item" href="#">Setting</a>
                               <a class="dropdown-item" href="#">Help Center</a>
                               <a class="dropdown-item" href="/logout">Logout</a>
@@ -120,7 +120,7 @@
                             <h3>ALL LESSON</h3>
                             <ul class="main-nav-ul">
                                 {% for i in range(0, lenlesson) %}
-                                    <li><a href="{{ lesson['lesson'][i]['link']}}"> {{lesson['lesson'][i]['name']}}</a>
+                                    <li><a href="{{ lesson['lesson'][i]['link']}}"> {{lesson['lesson'][i]['title']}}</a>
                                 {% endfor %}
                             </ul>
         
