@@ -20,7 +20,7 @@ def insert_course():
     _duration = request.form.get('thoiluong')
     course = Course(_name_course, _des, _duration)
 
-    topic = db.session.query.(Topic).filter(Topic.id == topicId).first()
+    topic = db.session.query.(Topic).filter(Topic.id == _topic).first()
     if topic:
         topic.coursers.append(course)
     print(course.title)
