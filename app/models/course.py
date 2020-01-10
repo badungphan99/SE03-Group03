@@ -65,7 +65,6 @@ class Section(db.Model):
     content = db.Column(db.String(250), unique=True, nullable=False)
     quizs = db.relationship('Quiz', backref='section', lazy='dynamic')
 
-    def __init__(self, course_id, title, content):
-        self.course_id = course_id
+    def __init__(self, title, content):
         self.title = title
         self.content = content
