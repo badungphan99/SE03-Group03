@@ -61,6 +61,12 @@ def delete_section(section_id):
     db.session.delete(section)
     db.session.commit()
 
+def update_section(section_id, title, content):
+    section = db.session.query(Section).filter(Section.id == section_id).first()
+    section.title = title
+    section.content = content
+    db.session.commit()
+
 def get_lesson_by_course_id(course_id):
     lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id).all()
     return lessons
