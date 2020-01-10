@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
 
-    <!--core js-->
+    <!-- core js -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div id="header" class="header" class="container-fluid" style="margin-bottom: 0px;">
+   <div id="header" class="header" class="container-fluid">
         <div class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
@@ -29,12 +29,9 @@
                         Learning
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Arts and Humanities</a>
-                          <a class="dropdown-item" href="#">Business</a>
-                          <a class="dropdown-item" href="#">Computer Science</a>
-                          <a class="dropdown-item" href="#">Data Science</a>
-                          <a class="dropdown-item" href="#">Information Technology</a>
-                          <a class="dropdown-item" href="#">Social Sciences</a>
+                            {% for i in range(0, len)%}
+                                <a class="dropdown-item" href="{{ topic['topic'][i]['link']}}" > {{topic['topic'][i]['name']}}</a>
+                            {% endfor %}
                         </div>
                       </div>
                 </div>
@@ -56,16 +53,18 @@
             <div class="col-sm-6 col-md-4 ">
                 <div class="col-md-6 col-sm-12 account-header">
                     <div class="dropdown">
-                        <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="block_mycourse.html">My courses</a>
-                          <a class="dropdown-item" href="#">Profile</a>
-                          <a class="dropdown-item" href="#">Setting</a>
-                          <a class="dropdown-item" href="#">Help Center</a>
-                          <a class="dropdown-item" href="#">Logout</a>
-                        </div>
+                        {% if current_user.is_authenticated %}
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                              <a class="dropdown-item" href="block_account.html">Profile</a>
+                              <a class="dropdown-item" href="#">Setting</a>
+                              <a class="dropdown-item" href="#">Help Center</a>
+                              <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        {% endif %}
                       </div>
                 </div>
             </div>
@@ -76,46 +75,48 @@
         <div class="container mycourse">
             <div class="row mycourse-title">
                 <div class="tab-item active">
-                    Add new lessons
+                    Lesson 1: Introduce
                 </div>
             </div>
            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Name Lesson</label>
-                        <input type="text" class="form-control" name="DisplayName" value="">
-                        <input type="text" class="form-control hide" name="name-lesson">
-                    </div>
-                    <div id="sample-code" class="form-group">
-                        <label>Content lesson</label>
-                        <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Img lesson</label>
-                        <input type="file" class="" name="img-lesson" value="">
-                    </div>
-                    <div class="form-group">
-                        <label>File of lesson</label>
-                        <input type="file" class="" name="video-lesson" value="">
-                    </div>
-                    <div class="row form-group ">
-                        <div class="col-md-6">
-                                <a href="">Cancle</a>
-                        </div>
-                        <div class="col-md-6"> 
-                             <button class="btn btn-primary" style="float: right">Save</button>
-                        </div>
-                    </div>
+                <div class="col-md-8 content-lesson">
+                    <p>
+                        Sự sống đang tái sinh một cách kỳ diệu, những mầm non xanh 
+                        đang nhú mình trỗi dậy từ dưới lớp tro tàn ở nơi mà Đại thảm họa 
+                        cháy rừng vừa quét qua - tiểu bang New South Wales (Úc). Hôm ngày
+                        6 tháng 1, nhiếp ảnh gia Mary Voorwinde đã được một người dân 
+                        phương tên là Murray Lowe dẫn đi xung quanh làng Kulnara, thuộc
+                        hành phố Coast Central để chụp lại sự hồi sinh đáng kinh ngạc ở nơi này. 
+                        Được biết, ngọn lửa đã thiêu rụi 45.944 héc-ta diện tích của Kulnara.
+                        Chia sẻ những tấm hình chụp được trên trang mạng xã hội Facebook, 
+                        nữ nhiếp ảnh gia này có viết một đoạn chú thích là: "Hi vọng đã trở 
+                        lại với môi trường tự nhiên ở nơi đây. Chuyến đi dạo quanh Kulnara là 
+                        một trải nghiệm tuyệt vời. Nhờ nó mà tôi có cơ hội được nghe những người 
+                        bản địa như Lee hay Mick kể về phút giây họ phải đối mặt với ngọn lửa dữ 
+                        dội như thế nào, những người lính cứu hỏa dũng cảm đã giúp đỡ người dân địa 
+                        phương bảo vệ nhà của họ như thế nào..."
+                    </p>
+
+                    <ul>
+                        <p class="baitap">BaiTap</p>
+                        <li>
+                            <a href="">Ex1</a>
+                        </li>
+                        <li>
+                            <a href="">Ex2</a>
+                        </li>
+                        <li>
+                            <a href="">Ex3</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-md-6"></div>
            </div>
            
-
             <div class="row banner-ads">
-
             </div>
         </div>
     </div>
+
 
     <div id="footer" class="container-fluid footer">
         <div class="row">
@@ -194,4 +195,15 @@
         </div>
     </div>
 </body>
+
+<script>
+    $(function(){
+     $('button').click(function(){
+         $('#more-comment').toggle(800);
+     });
+ });
+ </script>
+<script src="../static/js/ratting.js"></script>
+<script src="../static/js/time.js"></script>
+
 </html>

@@ -965,6 +965,11 @@ a:hover{
     margin: 60px auto;
     line-height: 1.5;
 }
+.baitap{
+    font-weight: 600;
+    font-size: 18px;
+    font-style: italic;
+}
 .mycourse-list
 {
     margin-top: 40px;
