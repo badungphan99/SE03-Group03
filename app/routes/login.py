@@ -25,4 +25,4 @@ def process_login():
 @login_required
 def logout():
     logout_user()
-    return redirect('/block_home.html')
+    return redirect('/')
