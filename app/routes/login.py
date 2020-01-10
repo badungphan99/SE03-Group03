@@ -13,8 +13,11 @@ def process_login():
     
     status = check_login(_username, _passwd)
     if status == True:
-        return redirect('block_course.html')
-        session['username'] = _username
+        if(current_user.type_id == 2):
+            return redirect('block_course.html')
+        if(current_user.type_id == 1):
+            return redirect('teacher_home')
+        # session['username'] = _username
     flash(status)
     return redirect('/login.html')
 

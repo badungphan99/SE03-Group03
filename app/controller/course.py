@@ -1,5 +1,5 @@
 from app.models import *
-from app import db
+from app import *
 
 def learning():
     topics = get_topic()
