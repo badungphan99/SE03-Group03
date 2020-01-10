@@ -38,6 +38,11 @@ def get_techercourse_of_courseID(courseId):
 def get_lesson_by_ID(lessonID):
     lesson = db.session.query(Section).filter(Section.id == lessonID).first()
     return lesson
+
 def get_all_section_by_courseID(courseId):
     sections = db.session.query(Section).filter(Course.id == courseId).all()
     return sections
+
+def get_all_course_by_user_id(userID):
+    courses = db.session.query(Course).join(StudentCourse).filter(StudentCourse.user_id == userID).all()
+    return courses

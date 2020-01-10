@@ -118,13 +118,18 @@ def testvar(courseID):
 @login_required
 def viewCourse():
     topic, length = learning()
-    courses = get_course()
+    courses = get_all_course_by_user_id(current_user.id)
+    
     course = {
         "course" : [
         ]
     }
     for cs in courses:
-        tc = get_techercourse_of_courseID(cs.id)
+        tcs = get_techercourse_of_courseID(cs.id)
+        tc = ""
+        # print (tcs)
+        for name in tcs:
+            tc = tc + str(name)[2:-3] + ","
         course['course'].append({
             "id" : cs.id,
             "title" : cs.title,
@@ -132,9 +137,10 @@ def viewCourse():
             "description" : cs.description,
             "create_date" : cs.create_date,
             "duration" : cs.duration,
-            "techer_course" : tc
+            "techer_course" : tc[:-1],
+            "link" : "/course/" + str(cs.id)
         })
-    return render_template('block_mycourse.html', topic= topic, len=length, course=course)
+    return render_template('block_mycourse.html', topic= topic, len=length, course=course, lencourses=len(courses))
 
 @app.route('/course/<string:courseID>/lesson=<string:lessonID>', endpoint="render_lesson", methods=['GET', 'POST'])
 def render_lesson(courseID, lessonID):

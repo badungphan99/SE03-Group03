@@ -77,7 +77,7 @@
                     <li>
                         <p>Courses</p>
                         <div class="img-courses img-count-courses"></div>
-                        <span class="course-number">5</span>
+                        <span class="course-number">{{lencourses}}</span>
                     </li>
 
                     <li>
@@ -102,102 +102,26 @@
 
             <div class="row mycourse-list">
                 <ul>
-                    <li class="col-md-3 cousera-item">
-                        <a href="">
-                            <img src="../static/images/vd.jpg" class="img-item" alt="">
-                        </a>
-                        <a href="">
-                            <h4 class="cousera-name">Technology</h4>
-                        </a>
-                        <div class="cousera-info">
-                            <div class="teacher-name">
-                                Teacher:<span>Mr.David</span>
+                    {%for i in range(0, lencourses)%}
+                        <li class="col-md-3 cousera-item">
+                            <a href="{{course['course'][i]['link']}}">
+                                <img src="../static/images/vd.jpg" class="img-item" alt="">
+                            </a>
+                            <a href="{{course['course'][i]['link']}}">
+                                <h4 class="cousera-name" style="font-size: 20px;">{{course['course'][i]['title']}}</h4>
+                            </a>
+                            <div class="cousera-info">
+                                <div class="teacher-name">
+                                    Teacher:<span style="font-size: 12px;">{{course['course'][i]['techer_course']}}</span>
+                                </div>
+                                <div class="more">
+                                    <a href="{{course['course'][i]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
+                                </div>
                             </div>
-                            <div class="price">
-                                Price:<span> Free</span>
-                            </div>
-                            <div class="more">
-                                <button class="btn btn-continue btn-more">Continues</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-3 cousera-item">
-                        <a href="">
-                            <img src="../static/images/vd.jpg" class="img-item" alt="">
-                        </a>
-                        <a href="">
-                            <h4 class="cousera-name">Technology</h4>
-                        </a>
-                        <div class="cousera-info">
-                            <div class="teacher-name">
-                                Teacher:<span>Mr.David</span>
-                            </div>
-                            <div class="price">
-                                Price:<span> Free</span>
-                            </div>
-                            <div class="more">
-                                <button class="btn btn-continue btn-more">Continues</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-3 cousera-item">
-                        <a href="">
-                            <img src="../static/images/vd.jpg" class="img-item" alt="">
-                        </a>
-                        <a href="">
-                            <h4 class="cousera-name">Technology</h4>
-                        </a>
-                        <div class="cousera-info">
-                            <div class="teacher-name">
-                                Teacher:<span>Mr.David</span>
-                            </div>
-                            <div class="price">
-                                Price:<span> Free</span>
-                            </div>
-                            <div class="more">
-                                <button class="btn btn-continue btn-more">Continues</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-3 cousera-item">
-                        <a href="">
-                            <img src="../static/images/vd.jpg" class="img-item" alt="">
-                        </a>
-                        <a href="">
-                            <h4 class="cousera-name">Technology</h4>
-                        </a>
-                        <div class="cousera-info">
-                            <div class="teacher-name">
-                                Teacher:<span>Mr.David</span>
-                            </div>
-                            <div class="price">
-                                Price:<span> Free</span>
-                            </div>
-                            <div class="more">
-                                <button class="btn btn-continue btn-more">Continues</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="col-md-3 cousera-item">
-                        <a href="">
-                            <img src="../static/images/vd.jpg" class="img-item" alt="">
-                        </a>
-                        <a href="">
-                            <h4 class="cousera-name">Technology</h4>
-                        </a>
-                        <div class="cousera-info">
-                            <div class="teacher-name">
-                                Teacher:<span>Mr.David</span>
-                            </div>
-                            <div class="price">
-                                Price:<span> Free</span>
-                            </div>
-                            <div class="more">
-                                <button class="btn btn-continue btn-more">Continues</button>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    {% endfor %}
                 </ul>
+    
             </div>
 
             <div class="row banner-ads">
