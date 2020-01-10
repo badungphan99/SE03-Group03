@@ -39,7 +39,7 @@ def upload_file():
 			now = datetime.now()
 			dt_string = now.strftime("%d.%m.%Y.%H.%M.%S.%f")
 			#untested
-			insert_file_to_db(filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, "", "")
+			# insert_file_to_db(filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, "", "")
 
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], dt_string + "." + filename))
 			flash('File successfully uploaded')

@@ -47,22 +47,28 @@ def insert_course():
 def change_course(courseID):
     # topic, length = learning()
     # course = get_course_by_courseID(courseID)
-    # lessons = get_lesson_by_course_id(courseID)
-    # print (lessons)
-    # lesson = {
-    #     "lesson" : [
-    #     ]
-    # }
-    # for ls in lessons :
-    #     lesson['lesson'].append({
-    #         'title' : ls.title,
-    #         'content' : ls.content,
-    #         'link' : "/course/" + str(courseID) + '/lesson=' + str(ls.id)
-    #     })
+    lessons = get_lesson_by_course_id(courseID)
+    print (lessons)
+    lesson = {
+        "lesson" : [
+        ]
+    }
+    for ls in lessons :
+        lesson['lesson'].append({
+            'title' : ls.title,
+            'content' : ls.content,
+            'change' : "/change-lesson/" + str(courseID) + '/lesson=' + str(ls.id),
+            'del' : "/del-lesson/" + str(ls.id)
+        })
     # course_js = {
     #     "title" : course.title,
     #     "description" : course.description
     # }
     #
-    # lenlesson = len(lessons)
-    return render_template('teacher_addcourse_listitem.html')
+    lenlesson = len(lessons)
+    return render_template('teacher_addcourse_listitem.html', lesson=lesson, lenlesson=lenlesson)
+
+@app.route("/teacher_add_lession")
+def render_addlis():
+    return render_template("teacher_addcourse_item.html")
+
