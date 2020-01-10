@@ -38,6 +38,12 @@ def get_techercourse_of_courseID(courseId):
 def get_lesson_by_ID(lessonID):
     lesson = db.session.query(Section).filter(Section.id == lessonID).first()
     return lesson
+
 def get_all_section_by_courseID(courseId):
     sections = db.session.query(Section).filter(Course.id == courseId).all()
     return sections
+
+def create_section(course_id, title, content):
+    section = Section(title, content)
+    course = db.session.query(Course).filter(Course.id == course_id).first()
+    course.sections.append(section)
