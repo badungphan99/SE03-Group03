@@ -1,5 +1,6 @@
 from app import app
 from app.controller import *
+from app.models import *
 from flask import render_template, request, flash, redirect
 
 @app.route('/teacher_home', endpoint='teacher_home')
@@ -20,12 +21,9 @@ def insert_course():
     _duration = request.form.get('thoiluong')
     course = Course(_name_course, _des, _duration)
 
-    topic = db.session.query.(Topic).filter(Topic.id == _topic).first()
+    topic = db.session.query(Topic).filter(Topic.id == _topic).first()
     if topic:
         topic.coursers.append(course)
-    print(course.title)
-    print(course.description)
-    print(course.duration)
     db.session.add(course)
     db.session.commit()
     return render_template('teacher_addcourse_listitem.html')
