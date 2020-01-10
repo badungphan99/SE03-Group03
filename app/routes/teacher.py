@@ -78,8 +78,8 @@ def change_course(courseID):
         lesson['lesson'].append({
             'title' : ls.title,
             'content' : ls.content,
-            'change' : '/change-lesson/lesson=' + str(ls.id),
-            'del' : "/del-lesson/" + str(ls.id)
+            'change' : '/change-lesson/' +str(courseID)+ '/lesson=' + str(ls.id),
+            'del' : "/del-lesson/" +str(courseID)+'/'+ str(ls.id)
         })
     # course_js = {
     #     "title" : course.title,
@@ -111,4 +111,11 @@ def render_change_lesson(lessonID, courseID):
         "title" : ls.title,
         "content" : ls.content
     }
+    print (ls.content)
     return render_template("teacher_change_lesson.html", lesson=lesson)
+
+@app.route("/del-lesson/<string:courseID>/<string:lessonID>", endpoint="render_del_lesson", methods=['GET', 'POST'])
+def render_del_lesson(lessonID, courseID):
+    print(lessonID)
+    delete_section(lessonID)
+    return redirect('/change-course/' + str(courseID))

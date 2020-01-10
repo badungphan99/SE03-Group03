@@ -64,7 +64,7 @@
                           <a class="dropdown-item" href="#">Profile</a>
                           <a class="dropdown-item" href="#">Setting</a>
                           <a class="dropdown-item" href="#">Help Center</a>
-                          <a class="dropdown-item" href="#">Logout</a>
+                          <a class="dropdown-item" href="/logout">Logout</a>
                         </div>
                       </div>
                 </div>
@@ -84,11 +84,11 @@
                         <div class="form-group">
                             <label>Name Lesson</label>
                             <input type="text" class="form-control" name="DisplayName" value="{{lesson['title']}}">
-                            <input type="text" class="form-control hide" name="name-lesson">
+                            <!-- <input type="text" class="form-control hide" name="name-lesson"> -->
                         </div>
                         <div id="sample-code" class="form-group">
                             <label>Content lesson</label>
-                            <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson"></textarea>
+                            <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson">{{lesson['content']}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Img lesson</label>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="row form-group ">
                             <div class="col-md-6">
-                                    <a href="">Cancel</a>
+                                    <a href="">Cancle</a>
                             </div>
                             <div class="col-md-6"> 
                                 <button class="btn btn-primary" style="float: right">Save</button>
