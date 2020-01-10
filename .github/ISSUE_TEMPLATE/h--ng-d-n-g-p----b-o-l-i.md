@@ -2,8 +2,8 @@
 name: Hướng dẫn góp ý, báo lỗi
 about: Bạn gặp vấn đề, bạn phát hiện có lỗi, bạn muốn góp ý, hãy thực hiện theo hướng
   dẫn bên dưới để nhận được trả lời sớm nhất.
-title: "[]"
-labels: ''
+title: "[BUG]"
+labels: bug
 assignees: ''
 
 ---
