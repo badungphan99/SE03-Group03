@@ -115,6 +115,7 @@ def testvar(courseID):
     return render_template('block_learncourse.html', topic= topic, len=length, lesson=lesson, lenlesson=lenlesson, course=course_js)
 
 @app.route("/block_mycourse.html")
+@login_required
 def viewCourse():
     topic, length = learning()
     courses = get_course()
@@ -135,6 +136,8 @@ def viewCourse():
         })
     return render_template('block_mycourse.html', topic= topic, len=length, course=course)
 
-@app.route("/testajax.html")
-def ajaxtest1():
-    return render_template('testajax.html')
+@app.route('/course/<string:courseID>/lesson=<string:lessonID>', endpoint="render_lesson", methods=['GET', 'POST'])
+def render_lesson(courseID, lessonID):
+    topic, length = learning()
+    lesson = get_lesson_by_ID(lessonID)
+    return render_template("block_course_item.html", topic=topic, len=length)

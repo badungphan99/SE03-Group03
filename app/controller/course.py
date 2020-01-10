@@ -33,3 +33,10 @@ def get_list_course_by_topic_id(topic_id):
 def get_techercourse_of_courseID(courseId):
     userTeacher = db.session.query(User.fullname).join(TeacherCourse).join(Course).filter(Course.id == courseId).all()
     return userTeacher
+
+def get_lesson_by_ID(lessonID):
+    lesson = db.session.query(Section).filter(Section.id == lessonID).first()
+    return lesson
+def get_all_section_by_courseID(courseId):
+    sections = db.session.query(Section).filter(Course.id == courseId).all()
+    return sections
