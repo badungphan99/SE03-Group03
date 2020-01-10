@@ -51,7 +51,7 @@ def check_input_register(username, password, retypepassword, fullname, email):
 
 
 def insert_new_user(type_user, username, passwd, fullname, email, birthday, highest_degree, university, major):
-    type_account = TypeAccount(type_user)
+    # type_account = TypeAccount(type_user)
     user = User(username, passwd, fullname, email)
     # type_account.users.append(user)
     db.session.add(user)

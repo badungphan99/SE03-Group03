@@ -8,4 +8,21 @@ def teacher_home():
 
 @app.route('/add_course', endpoint='add_course')
 def add_course():
-    return render_template('teacher_addcourse.html')
+    topic, len = learning()
+    print(topic)
+    return render_template('teacher_addcourse.html', topic=topic, len=len)
+
+@app.route('/insert_course', endpoint='insert_course', methods=["POST"])
+def insert_course():
+    _name_course = request.form.get('DisplayName')
+    _topic = request.form.get('topicvalue')
+    _des = request.form.get('descourse')
+    _duration = request.form.get('thoiluong')
+    course = Course(_name_course, _des, _topic, _duration)
+    print(course.title)
+    print(course.description)
+    print(course.topic_id)
+    print(course.duration)
+    db.session.add(course)
+    db.session.commit()
+    return render_template('teacher_addcourse_listitem.html')

@@ -10,7 +10,8 @@ def learning():
     for tp in topics :
         result["topic"].append({
             "name" : tp.topic_name,
-            "link" : "/Learning/" + str(tp.id)
+            "link" : "/Learning/" + str(tp.id),
+            "id"   : tp.id
         })
     return result, len(topics)
 

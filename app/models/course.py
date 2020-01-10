@@ -17,11 +17,11 @@ class Course(db.Model):
 
     users = db.relationship('TeacherCourse', back_populates='course')
 
-    def __init__(self, title, description, duration):
+    def __init__(self, title, description, topic, duration):
         self.title = title
         self.description = description
         self.duration = duration
-
+        self.topic_id = topic
 
 class Topic(db.Model):
     __tablename__ = 'topic'

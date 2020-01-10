@@ -81,40 +81,41 @@
             </div>
            <div class="row">
                 <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Name course</label>
-                        <input type="text" class="form-control" name="DisplayName" value="">
-                        <input type="text" class="form-control hide" name="Id">
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <label class="input-group-text" for="inputGroupSelect01">The loai</label>
+                    <form action="/insert_course" method="POST">
+                        <div class="form-group">
+                            <label>Name course</label>
+                            <input type="text" class="form-control" name="DisplayName" value="">
+                            <input type="text" class="form-control hide" name="Id" id="namecourse">
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="inputGroupSelect01">The loai</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01" name="topicvalue">
+                                    {% for i in range(0, len)%}
+                                      <option value="{{ topic['topic'][i]['id'] }}">{{ topic['topic'][i]['name'] }}</option>
+                                    {% endfor %}
+                                </select>
+                              </div>
+                        </div>
+                        <div id="sample-code" class="form-group">
+                            <label>Mo ta</label>
+                            <textarea id="SampleCode" class="form-control" rows="10" name="descourse"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Thoi luong</label>
+                            <input type="text" class="form-control" name="thoiluong" value="">
+                        </div>
+                        <div class="row form-group ">
+                            <div class="col-md-6">
+                                    <a href="">Cancle</a>
                             </div>
-                            <select class="custom-select" id="inputGroupSelect01">
-                              <option selected>Chon the loai</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                          </div>
-                    </div>
-                    <div id="sample-code" class="form-group">
-                        <label>Mo ta</label>
-                        <textarea id="SampleCode" class="form-control" rows="10" name="SampleCode"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Thoi luong</label>
-                        <input type="text" class="form-control" name="thoiluong" value="">
-                    </div>
-                    <div class="row form-group ">
-                        <div class="col-md-6">
-                                <a href="">Cancle</a>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary right-r">Save</button>
+                            </div>
                         </div>
-                        <div class="col-md-6"> 
-                            <button class="btn btn-primary right-r">Save</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-md-6"></div>
            </div>
