@@ -55,6 +55,12 @@ def create_section(course_id, title, content):
     db.session.add(section)
     db.session.commit()
 
+def delete_section(section_id):
+    section = db.session.query(Section).filter(Section.id == section_id).first()
+    all_file_upload = db.session.query(FileUpload).filter(FileUpload.file_id == section_id).delete()
+    db.session.delete(section)
+    db.session.commit()
+
 def get_lesson_by_course_id(course_id):
     lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id).all()
     return lessons
