@@ -19,6 +19,6 @@ def insert_teacher_course(user_id,_name_course, _des, _duration, _topic):
         teachCourse.course = course
         user.courses.append(teachCourse)
 
-    # db.session.add(course)
-    # db.session.commit()
+    db.session.add(course)
+    db.session.commit()
 
