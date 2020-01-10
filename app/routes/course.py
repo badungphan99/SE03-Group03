@@ -97,6 +97,7 @@ def testvar(courseID):
     topic, length = learning()
     course = get_course_by_courseID(courseID)
     lessons = get_lesson_by_course_id(courseID)
+    print (lessons)
     lesson = {
         "lesson" : [
         ]
@@ -104,14 +105,15 @@ def testvar(courseID):
     for ls in lessons :
         lesson['lesson'].append({
             'title' : ls.title,
-            'content' : ls.content
+            'content' : ls.content,
+            'link' : "/course/" + str(courseID) + '/lesson=' + str(ls.id)
         })
     course_js = {
         "title" : course.title,
         "description" : course.description
     }
 
-    lenlesson = 1
+    lenlesson = len(lessons)
     return render_template('block_learncourse.html', topic= topic, len=length, lesson=lesson, lenlesson=lenlesson, course=course_js)
 
 @app.route("/block_mycourse.html")
