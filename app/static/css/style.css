@@ -225,7 +225,8 @@ a:hover{
 .cousera-name{
     padding: 10px;
 }
-.cousera-info span{
+.cousera-info span {
+    font-size: 12px;
     padding: 0 10px;
     color: #2a73cc;
 }
@@ -983,6 +984,9 @@ a:hover{
 .mycourse-list ul li{
     float: left;
     margin: 45px;
+}
+.cousera-item h4{
+    font-size: 20px;
 }
 .btn-continue{
     background: #d9534f;

@@ -85,8 +85,8 @@ def render_learning(id):
             "techer_course" : tc[:-1],
             "link" : "/course/" + str(cs.id)
         })
-    varLogin="/login.html";
-    varSignUp = "/register.html";
+    varLogin="/login.html"
+    varSignUp = "/register.html"
     myCourse = "/block_mycourse.html"
     varLogout = "/logout"
     return render_template('block_topic.html', topic= topic, len=length, course=course, lencourses=lencourses, varLogin=varLogin, varSignUp=varSignUp, myCourse=myCourse, varLogout=varLogout)
@@ -107,7 +107,8 @@ def testvar(courseID):
     }
 
     course_js = {
-        "title" : course.title
+        "title" : course.title,
+        "description" : course.description
     }
 
     lenlesson = 1
@@ -115,7 +116,24 @@ def testvar(courseID):
 
 @app.route("/block_mycourse.html")
 def viewCourse():
-    return render_template('block_mycourse.html')
+    topic, length = learning()
+    courses = get_course()
+    course = {
+        "course" : [
+        ]
+    }
+    for cs in courses:
+        tc = get_techercourse_of_courseID(cs.id)
+        course['course'].append({
+            "id" : cs.id,
+            "title" : cs.title,
+            "topic_id" : cs.topic_id,
+            "description" : cs.description,
+            "create_date" : cs.create_date,
+            "duration" : cs.duration,
+            "techer_course" : tc
+        })
+    return render_template('block_mycourse.html', topic= topic, len=length, course=course)
 
 @app.route("/testajax.html")
 def ajaxtest1():

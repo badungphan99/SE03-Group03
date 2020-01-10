@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
-                    <a href="block_home.html"><h3>OpenSchool</h3></a>
+                    <a href="/"><h3>OpenSchool</h3></a>
                 </div>
                 <div class="col-md-6 col-sm-12 menu-home">
                     <div class="dropdown">
@@ -30,12 +30,9 @@
                         Learning
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Arts and Humanities</a>
-                          <a class="dropdown-item" href="#">Business</a>
-                          <a class="dropdown-item" href="#">Computer Science</a>
-                          <a class="dropdown-item" href="#">Data Science</a>
-                          <a class="dropdown-item" href="#">Information Technology</a>
-                          <a class="dropdown-item" href="#">Social Sciences</a>
+                            {% for i in range(0, len)%}
+                                <a class="dropdown-item" href="{{ topic['topic'][i]['link']}}" > {{topic['topic'][i]['name']}}</a>
+                            {% endfor %}
                         </div>
                       </div>
                 </div>
@@ -61,7 +58,7 @@
                             <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="block_mycourse.html">My courses</a>
+                          <a class="dropdown-item" href="/block_mycourse.html">My courses</a>
                           <a class="dropdown-item" href="block_account.html">Profile</a>
                           <a class="dropdown-item" href="#">Setting</a>
                           <a class="dropdown-item" href="#">Help Center</a>
