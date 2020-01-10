@@ -115,6 +115,7 @@ def testvar(courseID):
     return render_template('block_learncourse.html', topic= topic, len=length, lesson=lesson, lenlesson=lenlesson, course=course_js)
 
 @app.route("/block_mycourse.html")
+@login_required
 def viewCourse():
     topic, length = learning()
     courses = get_course()
