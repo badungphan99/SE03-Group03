@@ -43,7 +43,6 @@ def get_all_section_by_courseID(courseId):
     sections = db.session.query(Section).filter(Course.id == courseId).all()
     return sections
 
-def create_section(course_id, title, content):
-    section = Section(title, content)
-    course = db.session.query(Course).filter(Course.id == course_id).first()
-    course.sections.append(section)
+def get_all_course_by_user_id(userID):
+    courses = db.session.query(Course).join(StudentCourse).filter(StudentCourse.user_id == userID).all()
+    return courses
