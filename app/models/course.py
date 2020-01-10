@@ -16,6 +16,7 @@ class Course(db.Model):
     forum = db.relationship('Forum', uselist=False, backref='course')
 
     users = db.relationship('TeacherCourse', back_populates='course')
+    studentUsers = db.relationship('StudentCourse', back_populates='course2')
 
     def __init__(self, title, description, duration):
         self.title = title
@@ -42,9 +43,8 @@ class StudentCourse(db.Model):
     total_grade = db.Column(db.Float)
     studentquizs = db.relationship('StudentQuiz', backref='student_course', lazy='dynamic')
 
-    def __init__(self, user_id, course_id):
-        self.user_id = user_id
-        self.course_id = course_id
+    user2 = db.relationship('User', back_populates="studentCourses")
+    course2 = db.relationship('Course', back_populates="studentUsers")
 
 
 class TeacherCourse(db.Model):
