@@ -96,16 +96,16 @@ def render_learning(id):
 def testvar(courseID):
     topic, length = learning()
     course = get_course_by_courseID(courseID)
-
+    lessons = get_lesson_by_course_id(courseID)
     lesson = {
         "lesson" : [
-            {
-                "name" : "Lesson 1 : do some thing",
-                "link" : "/download_lesson/" + "lesson1"
-            }
         ]
     }
-
+    for ls in lessons :
+        lesson['lesson'].append({
+            'title' : ls.title,
+            'content' : ls.content
+        })
     course_js = {
         "title" : course.title,
         "description" : course.description
