@@ -153,4 +153,13 @@ def render_lesson(courseID, lessonID):
         'content' : ls.content 
     }
     print(lesson)
-    return render_template("block_course_item.html", topic=topic, len=length, lesson=lesson)
+    files = []
+    file = get_file_of_lesson(lessonID)
+    
+    lenfile = len(file)
+    for f in file:
+        files.append({
+            'name' : f.file_name,
+            'link' : '/download_lesson/' + str(f.id)
+        })
+    return render_template("block_course_item.html", topic=topic, len=length, lesson=lesson, files=files, lenfile=lenfile)

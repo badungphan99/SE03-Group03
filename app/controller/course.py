@@ -68,9 +68,20 @@ def update_section(section_id, title, content):
     db.session.commit()
 
 def get_lesson_by_course_id(course_id):
-    lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id).all()
+    lessons = db.session.query(Section).filter(Section.course_id == course_id).order_by(Section.id).all()
     return lessons
 
 def get_all_teacher_course_by_user_id(userID):
     courses = db.session.query(Course).join(TeacherCourse).filter(TeacherCourse.user_id == userID).all()
     return courses
+
+def get_all_lesson():
+    return Section.query.all()
+
+def get_file_of_lesson(lessonID):
+    files = db.session.query(FileUpload).filter(FileUpload.file_id == lessonID).order_by(FileUpload.id).all()
+    return files
+
+def get_file_by_fileID(fileID):
+    file = db.session.query(FileUpload).filter(FileUpload.id == fileID).first()
+    return file

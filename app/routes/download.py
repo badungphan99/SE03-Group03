@@ -15,9 +15,12 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 UPLOAD_FOLDER = COURSE_DOCUMENT
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route('/download_lesson/<string:lesson>', methods=['GET', 'POST'])
-def download(lesson):
-    filename = "../" + UPLOAD_FOLDER + "/" + '07.01.2020.17.42.31.094714.bai3.txt'
-    print (filename)
+@app.route('/download_lesson/<string:fileID>', methods=['GET', 'POST'])
+def download(fileID):
+    # filename = "../" + UPLOAD_FOLDER + "/" + '07.01.2020.17.42.31.094714.bai3.txt'
+    # print (filename)
     # download = os.path.join(app.root_path, app.config['UPLOAD_FOLDER'])
-    return send_file(filename, attachment_filename='bai3.txt', as_attachment=True)
+    file = get_file_by_fileID(fileID)
+    path = "../" + file.path_in_server
+    print(path)
+    return send_file(path, attachment_filename=file.file_name, as_attachment=True)

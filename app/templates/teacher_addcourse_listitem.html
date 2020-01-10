@@ -60,11 +60,11 @@
                             <i class="fa fa-user-circle "  aria-hidden="true"></i>My Account
                         </button>
                         <div class="dropdown-menu">
-                          <a class="dropdown-item" href="teacher_home">My courses</a>
+                          <a class="dropdown-item" href="/teacher_home">My courses</a>
                           <a class="dropdown-item" href="#">Profile</a>
                           <a class="dropdown-item" href="#">Setting</a>
                           <a class="dropdown-item" href="#">Help Center</a>
-                          <a class="dropdown-item" href="#">Logout</a>
+                          <a class="dropdown-item" href="/logout">Logout</a>
                         </div>
                       </div>
                 </div>
@@ -82,38 +82,17 @@
             <div class="row ">
                 <table style="min-width:650px" id="table-list" border="1" cellspacing="0" cellpadding="5px" align="center">
                     <tr id="title-col">
-                        <td style="padding: 10px;">idLesson</td>
                         <td>Name</td>
-                        <td><a id="btn-them" class="btn btn-primary" href="#">Add</a></td>
+                        <td><a id="btn-them" class="btn btn-primary" href="/teacher_add_lession/{{courseID}}">Add</a></td>
                     </tr>
+                    {% for i in range(0, lenlesson) %}
                     <tr>
-                        <td>A123</td>
-                        <td class="align-name">Lesson1: Introduce</td>
-                        <td style="width: 150px;"><a id="btn-sua" class="btn btn-success" href="#">Changle</a>
-                            <a  id="btn-xoa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa?')" href="#">Delete</a>
+                        <td class="align-name">{{lesson['lesson'][i]['title']}}</td>
+                        <td style="width: 150px;"><a id="btn-sua" class="btn btn-success" href="{{lesson['lesson'][i]['change']}}">Change</a>
+                            <a  id="btn-xoa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{lesson['lesson'][i]['del']}}">Delete</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>A133</td>
-                        <td class="align-name">Lesson2: How to install ubuntu?</td class="align-name">
-                        <td style="width: 150px;"><a id="btn-sua" class="btn btn-success" href="#">Changle</a>
-                            <a  id="btn-xoa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa?')" href="#">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>A143</td>
-                        <td class="align-name">Lesson4: Install Visual studio code in your laptop.</td>
-                        <td style="width: 150px;"><a id="btn-sua" class="btn btn-success" href="#">Changle</a>
-                            <a  id="btn-xoa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa?')" href="#">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>A153</td>
-                        <td class="align-name">Lesson5: Html/css basic.</td class="align-name">
-                        <td style="width: 150px;"><a id="btn-sua" class="btn btn-success" href="#">Changle</a>
-                            <a  id="btn-xoa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa?')" href="#">Delete</a>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>
@@ -125,7 +104,7 @@
                 <h3><a href="">OpenSchool</a></h3>
                 <div class="footer-intro">
                     <p>
-                        Coursera provides universal access to the world’s best education,
+                        OpenSchool provides universal access to the world’s best education,
                             partnering with top universities and organizations to offer courses online.
                     </p>
                     <span> @2019 OpenShool SE03. All rights reserved.</span>
@@ -133,7 +112,7 @@
             </div>
             <div class="col-md-6 footer-more">
                 <div class="col-md-4 footer-more-item">
-                    <h5>cousera</h5>
+                    <h5>OpenSchool</h5>
                     <ul>
                         <li>
                             <a href="">About</a>
