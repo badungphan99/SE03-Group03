@@ -9,6 +9,7 @@ class FileUpload(db.Model):
     file_type_id = db.Column(db.Integer,  db.ForeignKey('file_type.id'))
     user_id = db.Column(db.Integer,  db.ForeignKey('user.id'))
     location_id = db.Column(db.Integer,  db.ForeignKey('file_location.id'))
+    file_id = db.Column(db.Integer)
 
     def __init__(self, fileName, pathInServer):
         self.file_name = fileName
