@@ -64,59 +64,59 @@
                           <a class="dropdown-item" href="#">Profile</a>
                           <a class="dropdown-item" href="#">Setting</a>
                           <a class="dropdown-item" href="#">Help Center</a>
-                          <a class="dropdown-item" href="#">Logout</a>
+                          <a class="dropdown-item" href="/logout">Logout</a>
                         </div>
                       </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="body body-big" id="body">
-        <div class="container mycourse">
-            <div class="row mycourse-title">
-                <div class="tab-item active">
-                    Add new lessons
+    <form action="/teacher_add_lession/{{courseID}}" method="POST">
+        <div class="body body-big" id="body">
+            <div class="container mycourse">
+                <div class="row mycourse-title">
+                    <div class="tab-item active">
+                        Add new lessons
+                    </div>
                 </div>
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name Lesson</label>
+                            <input type="text" class="form-control" name="DisplayName" value="">
+                            <input type="text" class="form-control hide" name="name-lesson">
+                        </div>
+                        <div id="sample-code" class="form-group">
+                            <label>Content lesson</label>
+                            <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Img lesson</label>
+                            <input type="file" class="" name="img-lesson" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>File of lesson</label>
+                            <input type="file" class="" name="video-lesson" value="">
+                        </div>
+                        <div class="row form-group ">
+                            <div class="col-md-6">
+                                    <a href="">Cancle</a>
+                            </div>
+                            <div class="col-md-6"> 
+                                <button class="btn btn-primary" style="float: right">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
             </div>
-           <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Name Lesson</label>
-                        <input type="text" class="form-control" name="DisplayName" value="">
-                        <input type="text" class="form-control hide" name="name-lesson">
-                    </div>
-                    <div id="sample-code" class="form-group">
-                        <label>Content lesson</label>
-                        <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Img lesson</label>
-                        <input type="file" class="" name="img-lesson" value="">
-                    </div>
-                    <div class="form-group">
-                        <label>File of lesson</label>
-                        <input type="file" class="" name="video-lesson" value="">
-                    </div>
-                    <div class="row form-group ">
-                        <div class="col-md-6">
-                                <a href="">Cancle</a>
-                        </div>
-                        <div class="col-md-6"> 
-                             <button class="btn btn-primary" style="float: right">Save</button>
-                        </div>
-                    </div>
+            
+
+                <div class="row banner-ads">
+
                 </div>
-                <div class="col-md-6"></div>
-           </div>
-           
-
-            <div class="row banner-ads">
-
             </div>
         </div>
-    </div>
-
+    </form>
     <div id="footer" class="container-fluid footer">
         <div class="row">
             <div class="col-md-5 footer-left">

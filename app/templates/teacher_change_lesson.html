@@ -71,33 +71,52 @@
             </div>
         </div>
     </div>
+    <form action="/teacher_add_lession/{{courseID}}" method="POST">
+        <div class="body body-big" id="body">
+            <div class="container mycourse">
+                <div class="row mycourse-title">
+                    <div class="tab-item active">
+                        Change lessons
+                    </div>
+                </div>
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name Lesson</label>
+                            <input type="text" class="form-control" name="DisplayName" value="{{lesson['title']}}">
+                            <input type="text" class="form-control hide" name="name-lesson">
+                        </div>
+                        <div id="sample-code" class="form-group">
+                            <label>Content lesson</label>
+                            <textarea id="content-lesson" class="form-control" rows="10" name="content-lesson"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Img lesson</label>
+                            <input type="file" class="" name="img-lesson" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>File of lesson</label>
+                            <input type="file" class="" name="video-lesson" value="">
+                        </div>
+                        <div class="row form-group ">
+                            <div class="col-md-6">
+                                    <a href="">Cancel</a>
+                            </div>
+                            <div class="col-md-6"> 
+                                <button class="btn btn-primary" style="float: right">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+            </div>
+            
 
-    <div class="body body-big" id="body">
-        <div class="container mycourse">
-            <div class="row mycourse-title">
-                <div class="tab-item active">
-                    Your Lessons
+                <div class="row banner-ads">
+
                 </div>
             </div>
-            <div class="row ">
-                <table style="min-width:650px" id="table-list" border="1" cellspacing="0" cellpadding="5px" align="center">
-                    <tr id="title-col">
-                        <td>Name</td>
-                        <td><a id="btn-them" class="btn btn-primary" href="/teacher_add_lession/{{courseID}}">Add</a></td>
-                    </tr>
-                    {% for i in range(0, lenlesson) %}
-                    <tr>
-                        <td class="align-name">{{lesson['lesson'][i]['title']}}</td>
-                        <td style="width: 150px;"><a id="btn-sua" class="btn btn-success" href="{{lesson['lesson'][i]['change']}}">Changle</a>
-                            <a  id="btn-xoa" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn xóa?')" href="{{lesson['lesson'][i]['del']}}">Delete</a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
         </div>
-    </div>
-
+    </form>
     <div id="footer" class="container-fluid footer">
         <div class="row">
             <div class="col-md-5 footer-left">

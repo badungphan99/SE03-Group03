@@ -60,3 +60,6 @@ def get_lesson_by_course_id(course_id):
 def get_all_teacher_course_by_user_id(userID):
     courses = db.session.query(Course).join(TeacherCourse).filter(TeacherCourse.user_id == userID).all()
     return courses
+
+def get_all_lesson():
+    return Section.query.all()

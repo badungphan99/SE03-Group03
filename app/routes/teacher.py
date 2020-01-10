@@ -3,6 +3,27 @@ from app.controller import *
 from app.models import *
 from flask import render_template, request, flash, redirect
 
+import os
+from app import app
+from app.controller import *
+from flask import render_template, request, flash, redirect, send_from_directory, send_file
+from werkzeug.utils import secure_filename
+import urllib.request
+from dotenv import load_dotenv
+
+from datetime import datetime
+
+load_dotenv(dotenv_path='./env/data_upload.env')
+COURSE_DOCUMENT = os.getenv('COURSE_DOCUMENT')
+
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+UPLOAD_FOLDER = COURSE_DOCUMENT
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+
+def allowed_file(filename):
+	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 @app.route('/teacher_home', endpoint='teacher_home')
 def teacher_home():
     courses = get_all_teacher_course_by_user_id(current_user.id)
@@ -57,7 +78,7 @@ def change_course(courseID):
         lesson['lesson'].append({
             'title' : ls.title,
             'content' : ls.content,
-            'change' : "/change-lesson/" + str(courseID) + '/lesson=' + str(ls.id),
+            'change' : '/change-lesson/lesson=' + str(ls.id),
             'del' : "/del-lesson/" + str(ls.id)
         })
     # course_js = {
@@ -66,9 +87,28 @@ def change_course(courseID):
     # }
     #
     lenlesson = len(lessons)
-    return render_template('teacher_addcourse_listitem.html', lesson=lesson, lenlesson=lenlesson)
+    return render_template('teacher_addcourse_listitem.html', lesson=lesson, lenlesson=lenlesson, courseID=courseID)
 
-@app.route("/teacher_add_lession")
-def render_addlis():
-    return render_template("teacher_addcourse_item.html")
+@app.route("/teacher_add_lession/<string:courseID>", endpoint="render_addlis", methods=['POST', 'GET'])
+def render_addlis(courseID):
+    if request.method == 'POST':
+        namelesson = request.form.get('DisplayName')
+        contentlesson = request.form.get('content-lesson')
+        create_section(courseID, namelesson, contentlesson)
+        return redirect('/change-course/'+ str(courseID))
+    return render_template("teacher_addcourse_item.html", courseID=courseID)
 
+@app.route("/change-lesson/<string:courseID>/lesson=<string:lessonID>", endpoint="render_change_lesson", methods=['POST', 'GET'])
+def render_change_lesson(lessonID, courseID):
+    ls = get_lesson_by_ID(lessonID)
+    if request.method == 'POST':
+        print (lessonID)
+        namelesson = request.form.get('DisplayName')
+        contentlesson = request.form.get('content-lesson')
+
+        return change_course(courseID)
+    lesson = {
+        "title" : ls.title,
+        "content" : ls.content
+    }
+    return render_template("teacher_change_lesson.html", lesson=lesson)
