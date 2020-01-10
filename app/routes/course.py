@@ -115,7 +115,24 @@ def testvar(courseID):
 
 @app.route("/block_mycourse.html")
 def viewCourse():
-    return render_template('block_mycourse.html')
+    topic, length = learning()
+    courses = get_course()
+    course = {
+        "course" : [
+        ]
+    }
+    for cs in courses:
+        tc = get_techercourse_of_courseID(cs.id)
+        course['course'].append({
+            "id" : cs.id,
+            "title" : cs.title,
+            "topic_id" : cs.topic_id,
+            "description" : cs.description,
+            "create_date" : cs.create_date,
+            "duration" : cs.duration,
+            "techer_course" : tc
+        })
+    return render_template('block_mycourse.html', topic= topic, len=length, course=course)
 
 @app.route("/testajax.html")
 def ajaxtest1():
