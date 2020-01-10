@@ -118,7 +118,7 @@ def testvar(courseID):
 @login_required
 def viewCourse():
     topic, length = learning()
-    courses = get_all_course_by_user_id(current_user.id)
+    courses = get_all_student_course_by_user_id(current_user.id)
     
     course = {
         "course" : [
