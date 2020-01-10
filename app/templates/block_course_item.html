@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
 
-    <!-- core js -->
+    <!--core js-->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -75,26 +75,13 @@
         <div class="container mycourse">
             <div class="row mycourse-title">
                 <div class="tab-item active">
-                    Lesson 1: Introduce
+                    {{lesson['title']}}
                 </div>
             </div>
            <div class="row">
                 <div class="col-md-8 content-lesson">
                     <p>
-                        Sự sống đang tái sinh một cách kỳ diệu, những mầm non xanh 
-                        đang nhú mình trỗi dậy từ dưới lớp tro tàn ở nơi mà Đại thảm họa 
-                        cháy rừng vừa quét qua - tiểu bang New South Wales (Úc). Hôm ngày
-                        6 tháng 1, nhiếp ảnh gia Mary Voorwinde đã được một người dân 
-                        phương tên là Murray Lowe dẫn đi xung quanh làng Kulnara, thuộc
-                        hành phố Coast Central để chụp lại sự hồi sinh đáng kinh ngạc ở nơi này. 
-                        Được biết, ngọn lửa đã thiêu rụi 45.944 héc-ta diện tích của Kulnara.
-                        Chia sẻ những tấm hình chụp được trên trang mạng xã hội Facebook, 
-                        nữ nhiếp ảnh gia này có viết một đoạn chú thích là: "Hi vọng đã trở 
-                        lại với môi trường tự nhiên ở nơi đây. Chuyến đi dạo quanh Kulnara là 
-                        một trải nghiệm tuyệt vời. Nhờ nó mà tôi có cơ hội được nghe những người 
-                        bản địa như Lee hay Mick kể về phút giây họ phải đối mặt với ngọn lửa dữ 
-                        dội như thế nào, những người lính cứu hỏa dũng cảm đã giúp đỡ người dân địa 
-                        phương bảo vệ nhà của họ như thế nào..."
+                        {{lesson['content']}}
                     </p>
 
                     <ul style="list-style: none;">

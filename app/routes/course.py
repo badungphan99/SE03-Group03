@@ -147,5 +147,10 @@ def viewCourse():
 @app.route('/course/<string:courseID>/lesson=<string:lessonID>', endpoint="render_lesson", methods=['GET', 'POST'])
 def render_lesson(courseID, lessonID):
     topic, length = learning()
-    lesson = get_lesson_by_ID(lessonID)
-    return render_template("block_course_item.html", topic=topic, len=length)
+    ls = get_lesson_by_ID(lessonID)
+    lesson = {
+        'title' : ls.title,
+        'content' : ls.content 
+    }
+    print(lesson)
+    return render_template("block_course_item.html", topic=topic, len=length, lesson=lesson)
