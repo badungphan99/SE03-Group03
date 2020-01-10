@@ -54,5 +54,5 @@ def create_section(course_id, title, content):
     course.sections.append(section)
 
 def get_lesson_by_course_id(course_id):
-    lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id)
+    lessons = db.session.query(Section).filter(Section.course_id).order_by(Section.id).all()
     return lessons
