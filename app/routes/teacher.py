@@ -18,10 +18,13 @@ def insert_course():
     _topic = request.form.get('topicvalue')
     _des = request.form.get('descourse')
     _duration = request.form.get('thoiluong')
-    course = Course(_name_course, _des, _topic, _duration)
+    course = Course(_name_course, _des, _duration)
+
+    topic = db.session.query.(Topic).filter(Topic.id == topicId).first()
+    if topic:
+        topic.coursers.append(course)
     print(course.title)
     print(course.description)
-    print(course.topic_id)
     print(course.duration)
     db.session.add(course)
     db.session.commit()
