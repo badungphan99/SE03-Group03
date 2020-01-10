@@ -86,15 +86,11 @@
 
                     <ul style="list-style: none;">
                         <p class="baitap">BaiTap</p>
-                        <li>
-                            <a href="">Ex1</a>
-                        </li>
-                        <li>
-                            <a href="">Ex2</a>
-                        </li>
-                        <li>
-                            <a href="">Ex3</a>
-                        </li>
+                        {% for i in range(0, lenfile) %}
+                            <li>
+                                <a href="{{files[i]['link']}}">{{files[i]['name']}}</a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
            </div>

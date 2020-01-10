@@ -77,3 +77,11 @@ def get_all_teacher_course_by_user_id(userID):
 
 def get_all_lesson():
     return Section.query.all()
+
+def get_file_of_lesson(lessonID):
+    files = db.session.query(FileUpload).filter(FileUpload.file_id == lessonID).order_by(FileUpload.id).all()
+    return files
+
+def get_file_by_fileID(fileID):
+    file = db.session.query(FileUpload).filter(FileUpload.id == fileID).first()
+    return file

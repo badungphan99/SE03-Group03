@@ -110,6 +110,7 @@ def render_addlis(courseID):
             dt_string = now.strftime("%d.%m.%Y.%H.%M.%S.%f")
             
             insert_file_to_db(current_user.id, filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, ls[len(ls)-1].id)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], dt_string + "." + filename))
         return redirect('/change-course/'+ str(courseID))
     return render_template("teacher_addcourse_item.html", courseID=courseID)
 
@@ -135,6 +136,7 @@ def render_change_lesson(lessonID, courseID):
             dt_string = now.strftime("%d.%m.%Y.%H.%M.%S.%f")
             
             insert_file_to_db(current_user.id, filename, UPLOAD_FOLDER + "/" + dt_string + "." + filename, lessonID)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], dt_string + "." + filename))
         return redirect('/change-course/' + str(courseID))
     lesson = {
         "title" : ls.title,
