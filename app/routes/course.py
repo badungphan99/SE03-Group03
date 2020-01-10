@@ -6,6 +6,7 @@ from app.controller import *
 
 @app.route('/block_course.html', endpoint='render_course')
 def render_course():
+    # print(current_user.id)
     topic, length = learning()
     courses = get_course()
     course = {

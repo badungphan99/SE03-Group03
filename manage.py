@@ -35,14 +35,14 @@ def test():
 
     course1 = Course("Introduction to Artificial Intelligence", "A high-level overview of AI to learn how Machine Learning provides the foundation for AI, and how you can leverage cognitive services in your apps", 400)
     course2 = Course("Logic and Computational Thinking", 'Understanding how a computer "thinks" is one of the first steps to becoming an excellent computer programmer. A foundation in logic is crucial in developing this understanding. Mastering logic is more than learning a set of rules.', 220)
-    course3 = Course("Introduction to Python", 'Focus on Python data structures, and work with string, list, and range sequences. Discover the power of list iteration, and learn about string and list methods. From there, get the details on file input and output--open files, read them, add to them, close them, and more.', 220)
+    course3 = Course("Introduction to Python", 'Focus on Python data structures, and work with string, list, and range sequences. Discover the power of list iteration, and learn about string and list methods.', 220)
     course4 = Course("Strategic Management", 'Learn how a manager or CEO develops a business strategy, including analyzing the market and creating competitive advantage.', 440)
     course5 = Course("Corporate Finance", 'Business organizations are constantly engaged in financial decision-making related to financial planning, investments, capital purchases, etc. The right financial decisions play a critical role in maximizing an organization’s business value.',600)
-    course6 = Course("Marketing Management", 'Learn how to effectively apply marketing management theories and practices, including the marketing mix, through real-world business scenarios. According to world-renowned management consultant, Peter Drucker, "Marketing is the only distinguishing and unique function of business…There is only one valid definition of business purpose and that is to create a customer.”', 300)
+    course6 = Course("Marketing Management", 'Learn how to effectively apply marketing management theories and practices, including the marketing mix, through real-world business scenarios.”', 300)
     course7 = Course('Understanding Political Concepts', 'This course offers an exciting journey through political science concepts. Understand key concepts like party, bureaucracy, andconstitution by using new methods developed for scholars and students; including the innovative "Hyperpolitics" tool.',500)
-    course8 = Course('Introduction to Sociology', 'This course is designed to look critically and analytically through different sociological perspectives, including the functionalist, interactionist, conflict and feminist, to help us realize the extent to which society guides our thoughts and actions. The course material provides a fresh, new look at societies and cultures—more objective, full of inquiry and analysis, striving towards social justice and change. Sociology urges us to draw connections between public issues and personal problems, to see the strange as familiar and the familiar as strange, and to examine biography in a historical and social context.',700)
-    course9 = Course('Global Politics', 'The course explores global order and local disorders to explain why International Studies in the West are moving towards a planetary approach to World politics. Thinking globally helps explain new links between changes in the natural environment (demographics and climate) and changes in governing Institutions.',500)
-    course10 = Course('Human Rights Defenders','Human rights defenders are people who have the courage to stand up against injustice. In this online course, you will follow their stories, learn how they mitigate risks and explore the creative ways they use to speak up. You will find out what drives them to take action, witness what defenders can achieve and discover how you can use your voice to defend your rights and those of others.',800)
+    course8 = Course('Introduction to Sociology', 'This course is designed to look critically and analytically through different sociological perspectives, including the functionalist, interactionist, conflict and feminist',700)
+    course9 = Course('Global Politics', 'The course explores global order and local disorders to explain why International Studies in the West are moving towards a planetary approach to World politics.',500)
+    course10 = Course('Human Rights Defenders','Human rights defenders are people who have the courage to stand up against injustice.',800)
     db.session.add_all([user1, user2, user3, course1, course2])
 
     teacherCourse1 = TeacherCourse()
@@ -81,9 +81,9 @@ def test():
 
 
     tp5 = Topic(topic[4])
-    tp6 = Topic(topic[5])
+    # tp6 = Topic(topic[5])
 
-    db.session.add_all([tp1, tp2, tp3, tp4, tp5, tp6])
+    db.session.add_all([tp1, tp2, tp3, tp4, tp5])
     db.session.commit()
 
 
@@ -110,7 +110,7 @@ def migrate():
 
 @manager.command
 def build():
-    app.run(host='0.0.0.0', port=8081)
+    app.run(host='0.0.0.0', port=80)
 
 if __name__ == '__main__':
     manager.run()

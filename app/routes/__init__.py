@@ -5,3 +5,4 @@ from app.routes.course import *
 from app.routes.test import *
 from app.routes.upload import *
 from app.routes.download import *
+from app.routes.teacher import *
