@@ -961,6 +961,10 @@ a:hover{
     color: #2A73CC;
     height: 35px;
 }
+.content-lesson{
+    margin: 60px auto;
+    line-height: 1.5;
+}
 .mycourse-list
 {
     margin-top: 40px;
