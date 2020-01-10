@@ -84,8 +84,8 @@ def render_learning(id):
             "techer_course" : tc[:-1],
             "link" : "/course/" + str(cs.id)
         })
-    varLogin="/login.html";
-    varSignUp = "/register.html";
+    varLogin="/login.html"
+    varSignUp = "/register.html"
     myCourse = "/block_mycourse.html"
     varLogout = "/logout"
     return render_template('block_topic.html', topic= topic, len=length, course=course, lencourses=lencourses, varLogin=varLogin, varSignUp=varSignUp, myCourse=myCourse, varLogout=varLogout)
@@ -106,7 +106,8 @@ def testvar(courseID):
     }
 
     course_js = {
-        "title" : course.title
+        "title" : course.title,
+        "description" : course.description
     }
 
     lenlesson = 1

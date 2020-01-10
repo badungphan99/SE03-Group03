@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="col-md-6 col-sm-12 logo-home" id="logo-home">
-                    <a href="block_home.html"><h3>OpenSchool</h3></a>
+                    <a href="/"><h3>OpenSchool</h3></a>
                 </div>
                 <div class="col-md-6 col-sm-12 menu-home">
                     <div class="dropdown">
@@ -78,48 +78,31 @@
             </div>
             <div class="container">
                 <div class="" style="margin: auto;">
-                    <div class="well">    
-                        <div id="carouselExampleCaptions" class="carousel slide"data-ride="carousel">
-                                <ol class="carousel-indicators">
-                                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                                        <li data-target="carouselExampleCaptions" data-slide-to="2"></li>
-                                </ol>
-                                <div class="container topic-coursera">
-                                    <div class="row mycourse-list">
-                                        <ul>
-                                            {%for i in range(0, lencourses)%}
-                                                <li class="col-md-3 cousera-item">
-                                                    <a href="{{course['course'][i]['link']}}">
-                                                        <img src="../static/images/vd.jpg" class="img-item" alt="">
-                                                    </a>
-                                                    <a href="{{course['course'][i]['link']}}">
-                                                        <h4 class="cousera-name">{{course['course'][i]['title']}}</h4>
-                                                    </a>
-                                                    <div class="cousera-info">
-                                                        <div class="teacher-name">
-                                                            Teacher:<span>{{course['course'][i]['techer_course']}}</span>
-                                                        </div>
-                                                        <div class="more">
-                                                            <a href="{{course['course'][i]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                            
-                                    </div>
-                                    
-                                </div>
-                            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                                    <i class="fa fa-chevron-left"></i>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                                    <i class="fa fa-chevron-right"></i>
-                                    <span class="sr-only">Next</span>
-                                </a>
+                    <div class="container topic-coursera">
+                        <div class="row mycourse-list">
+                            <ul>
+                                {%for i in range(0, lencourses)%}
+                                    <li class="col-md-3 cousera-item">
+                                        <a href="{{course['course'][i]['link']}}">
+                                            <img src="../static/images/vd.jpg" class="img-item" alt="">
+                                        </a>
+                                        <a href="{{course['course'][i]['link']}}">
+                                            <h4 class="cousera-name" style="font-size: 20px;">{{course['course'][i]['title']}}</h4>
+                                        </a>
+                                        <div class="cousera-info">
+                                            <div class="teacher-name">
+                                                Teacher:<span style="font-size: 12px;">{{course['course'][i]['techer_course']}}</span>
+                                            </div>
+                                            <div class="more">
+                                                <a href="{{course['course'][i]['link']}}">  <button class="btn btn-secondary btn-more">See more</button></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                
                         </div>
+                        
                     </div>
                 </div>
             </div>
