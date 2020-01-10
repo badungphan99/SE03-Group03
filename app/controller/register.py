@@ -54,7 +54,7 @@ def get_all_type_account():
     return all_type_account
 
 def insert_new_user(type_account_id, username, passwd, fullname, email, birthday, highest_degree, university, major):
-    typeAccount = db.session.query(TypeAccount).filter(TypeAccount.id == type_account_id).first()
+    typeAccount = db.session.query(TypeAccount).filter(TypeAccount.type_name.like('Student')).first()
     user = User(username, passwd, fullname, email)
     typeAccount.users.append(user)
 
