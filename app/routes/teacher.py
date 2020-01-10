@@ -19,5 +19,5 @@ def insert_course():
     _topic = request.form.get('topicvalue')
     _des = request.form.get('descourse')
     _duration = request.form.get('thoiluong')
-    insert_teacher_course(_name_course, _des, _duration, _topic)
+    insert_teacher_course(current_user.id, _name_course, _des, _duration, _topic)
     return redirect('/teacher_home')
