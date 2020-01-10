@@ -45,7 +45,10 @@ Tạo ra một nền tảng cho phép người dùng có thể tạo lớp học
 - `$ ./install_docker.sh`
 - `$ ./build`
 
-## 5. Thành viên nhóm
+## 5. Cách sử dụng
+  https://github.com/badungphan99/SE03-Group03/wiki
+
+## 6. Thành viên nhóm
 
 - Phan Bá Dũng
 - Nguyễn Thị Kim Cúc
