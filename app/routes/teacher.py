@@ -24,7 +24,7 @@ def teacher_home():
             "create_date": cs.create_date,
             "duration": cs.duration,
             "techer_course": tc[:-1],
-            "link": "/course/" + str(cs.id)
+            "link": "/change-course/" + str(cs.id)
         })
     return render_template('teacher-home.html', course=course, lencourses=len(courses))
 
@@ -42,3 +42,27 @@ def insert_course():
     _duration = request.form.get('thoiluong')
     insert_teacher_course(current_user.id, _name_course, _des, _duration, _topic)
     return redirect('/teacher_home')
+
+@app.route('/change-course/<string:courseID>', endpoint="change_course", methods=['GET', 'POST'])
+def change_course(courseID):
+    # topic, length = learning()
+    # course = get_course_by_courseID(courseID)
+    # lessons = get_lesson_by_course_id(courseID)
+    # print (lessons)
+    # lesson = {
+    #     "lesson" : [
+    #     ]
+    # }
+    # for ls in lessons :
+    #     lesson['lesson'].append({
+    #         'title' : ls.title,
+    #         'content' : ls.content,
+    #         'link' : "/course/" + str(courseID) + '/lesson=' + str(ls.id)
+    #     })
+    # course_js = {
+    #     "title" : course.title,
+    #     "description" : course.description
+    # }
+    #
+    # lenlesson = len(lessons)
+    return render_template('teacher_addcourse_listitem.html')

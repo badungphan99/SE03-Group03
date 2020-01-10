@@ -23,6 +23,8 @@ class User(db.Model, UserMixin):
 
     courses = db.relationship('TeacherCourse', back_populates='user')
 
+    studentCourses = db.relationship('StudentCourse', back_populates='user2')
+
     def __init__(self, username, password, fullname, email, birthday = None, highest_degree = None, university = None, major = None):
         self.username = username
         self.password = password
